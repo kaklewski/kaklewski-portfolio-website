@@ -17,13 +17,13 @@ export default function Navbar() {
   ]
 
   return (
-    <Box as={'nav'} py={4} width={'100%'} borderBottomWidth={'1px'}>
-      <Container maxW={'4xl'}>
+    <Box as='nav' py={4} width='100%' borderBottomWidth='1px'>
+      <Container maxW='4xl'>
         <Flex justify='space-between' align='center'>
           <Link
-            href={'/'}
-            fontSize={'xl'}
-            fontWeight={'bold'}
+            href='/'
+            fontSize='xl'
+            fontWeight='bold'
             _hover={{
               textDecoration: 'none',
               color: 'teal.400',
