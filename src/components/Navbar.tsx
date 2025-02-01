@@ -17,8 +17,17 @@ export default function Navbar() {
   ]
 
   return (
-    <Box as='nav' py={4} width='100%' borderBottomWidth='1px'>
-      <Container maxW='4xl'>
+    <Box
+      as='nav'
+      py={4}
+      width='100%'
+      borderBottomWidth='1px'
+      position='sticky'
+      top={0}
+      zIndex='skipNav'
+      backgroundColor='rgba(9,9,11,.8)'
+      backdropFilter='blur(13px) saturate(150%)'>
+      <Container maxW='6xl'>
         <Flex justify='space-between' align='center'>
           <Link
             href='/'
@@ -26,10 +35,7 @@ export default function Navbar() {
             fontWeight='bold'
             _hover={{
               textDecoration: 'none',
-              color: 'teal.400',
-            }}
-            transition='color .12s'
-            transitionTimingFunction='ease-in-out'>
+            }}>
             Oskar Kąklewski
           </Link>
           <Box display={{ base: 'none', sm: 'inline-block' }}>
