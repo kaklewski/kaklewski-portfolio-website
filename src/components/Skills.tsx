@@ -117,17 +117,6 @@ export default function Skills() {
           </SkillBadge>
         </SkillCard>
 
-        <SkillCard title='Design'>
-          <SkillBadge color='blue'>
-            <IconBrandAdobePhotoshop stroke={1.5} />
-            Photoshop
-          </SkillBadge>
-          <SkillBadge color='orange'>
-            <SiFigma />
-            Figma
-          </SkillBadge>
-        </SkillCard>
-
         <SkillCard title='DevOps && CD/CI'>
           <SkillBadge color='red'>
             <SiGit />
@@ -144,6 +133,17 @@ export default function Skills() {
           <SkillBadge color='gray'>
             <SiGithub />
             GitHub
+          </SkillBadge>
+        </SkillCard>
+
+        <SkillCard title='Design'>
+          <SkillBadge color='blue'>
+            <IconBrandAdobePhotoshop stroke={1.5} />
+            Photoshop
+          </SkillBadge>
+          <SkillBadge color='orange'>
+            <SiFigma />
+            Figma
           </SkillBadge>
         </SkillCard>
       </SimpleGrid>

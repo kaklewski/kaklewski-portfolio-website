@@ -1,21 +1,21 @@
 import { Box, Container, Flex, Link } from '@chakra-ui/react'
 
-export default function Navbar() {
-  const links = [
-    {
-      name: 'Skills',
-      href: '#skills',
-    },
-    {
-      name: 'Projects',
-      href: '#projects',
-    },
-    {
-      name: 'Contact',
-      href: '#contact',
-    },
-  ]
+const links = [
+  {
+    name: 'Skills',
+    href: '#skills',
+  },
+  {
+    name: 'Projects',
+    href: '#projects',
+  },
+  {
+    name: 'Contact',
+    href: '#contact',
+  },
+]
 
+export default function Navbar() {
   return (
     <Box
       as='nav'
