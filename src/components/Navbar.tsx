@@ -27,7 +27,7 @@ export default function Navbar() {
       zIndex='skipNav'
       backgroundColor='rgba(9,9,11,.8)'
       backdropFilter='blur(13px) saturate(150%)'>
-      <Container maxW='6xl'>
+      <Container maxW='7xl'>
         <Flex justify='space-between' align='center'>
           <Link
             href='/'

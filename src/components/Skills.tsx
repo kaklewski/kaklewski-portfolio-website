@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import {
   SiChakraui,
+  SiCss,
   SiDocker,
   SiFigma,
   SiFlask,
@@ -35,15 +36,19 @@ import React from 'react'
 
 export default function Skills() {
   return (
-    <Container maxW='6xl' id='skills'>
+    <Container maxW='7xl' id='skills' py={{ base: 20, md: 36 }}>
       <Heading size='4xl' mb={4}>
         My Skills && Stack
       </Heading>
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
         <SkillCard title='JavaScript'>
-          <SkillBadge color='blue'>
+          <SkillBadge color='cyan'>
             <SiReact />
             React
+          </SkillBadge>
+          <SkillBadge color='blue'>
+            <SiTypescript />
+            TypeScript
           </SkillBadge>
           <SkillBadge color='yellow'>
             <SiJavascript />
@@ -53,16 +58,16 @@ export default function Skills() {
             <SiChakraui />
             Chakra UI
           </SkillBadge>
-          <SkillBadge color='blue'>
-            <SiTypescript />
-            TypeScript
-          </SkillBadge>
         </SkillCard>
 
         <SkillCard title='Front End'>
           <SkillBadge color='orange'>
             <SiHtml5 />
             HTML5
+          </SkillBadge>
+          <SkillBadge color='purple'>
+            <SiCss />
+            CSS3
           </SkillBadge>
           <SkillBadge color='pink'>
             <SiSass />
