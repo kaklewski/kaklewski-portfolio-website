@@ -83,6 +83,17 @@ export default function Skills() {
           </SkillBadge>
         </SkillCard>
 
+        <SkillCard title='Bundling'>
+          <SkillBadge color='purple'>
+            <SiVite />
+            Vite
+          </SkillBadge>
+          <SkillBadge color='pink'>
+            <IconMilkshake stroke={1.5} />
+            Gulp
+          </SkillBadge>
+        </SkillCard>
+
         <SkillCard title='Back End'>
           <SkillBadge color='blue'>
             <SiPython />
@@ -94,7 +105,7 @@ export default function Skills() {
           </SkillBadge>
           <SkillBadge color='red'>
             <SiNodedotjs />
-            Node
+            Node.js
           </SkillBadge>
           <SkillBadge color='green'>
             <IconDatabase stroke={1.5} />
@@ -103,17 +114,6 @@ export default function Skills() {
           <SkillBadge color='blue'>
             <SiDocker />
             Docker
-          </SkillBadge>
-        </SkillCard>
-
-        <SkillCard title='Bundling'>
-          <SkillBadge color='purple'>
-            <SiVite />
-            Vite
-          </SkillBadge>
-          <SkillBadge color='pink'>
-            <IconMilkshake stroke={1.5} />
-            Gulp
           </SkillBadge>
         </SkillCard>
 
