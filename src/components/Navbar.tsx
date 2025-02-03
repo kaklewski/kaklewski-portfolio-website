@@ -1,4 +1,24 @@
-import { Box, Container, Flex, Link } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  IconButton,
+  Link,
+} from '@chakra-ui/react'
+import {
+  DrawerActionTrigger,
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from '../components/ui/drawer'
+import { IconMenu2 } from '@tabler/icons-react'
 
 const links = [
   {
@@ -24,7 +44,7 @@ export default function Navbar() {
       borderBottomWidth='1px'
       position='sticky'
       top={0}
-      zIndex='skipNav'
+      zIndex='1000'
       backgroundColor='rgba(9,9,11,.8)'
       backdropFilter='blur(13px) saturate(150%)'>
       <Container maxW='7xl'>
@@ -38,6 +58,7 @@ export default function Navbar() {
             }}>
             Oskar Kąklewski
           </Link>
+
           <Box display={{ base: 'none', sm: 'inline-block' }}>
             <Flex gap={6}>
               {links.map(link => (
@@ -49,6 +70,36 @@ export default function Navbar() {
               ))}
             </Flex>
           </Box>
+
+          <DrawerRoot>
+            <DrawerBackdrop />
+            <DrawerTrigger asChild display={{ sm: 'none' }}>
+              <IconButton
+                aria-label='Open Menu'
+                variant='outline'
+                display='flex'>
+                <IconMenu2 stroke={1.75} />
+              </IconButton>
+            </DrawerTrigger>
+            <DrawerContent position='relative' zIndex='tooltip'>
+              <DrawerHeader>
+                <DrawerTitle>Drawer Title</DrawerTitle>
+              </DrawerHeader>
+              <DrawerBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </DrawerBody>
+              <DrawerFooter>
+                <DrawerActionTrigger asChild>
+                  <Button variant='outline'>Cancel</Button>
+                </DrawerActionTrigger>
+                <Button>Save</Button>
+              </DrawerFooter>
+              <DrawerCloseTrigger />
+            </DrawerContent>
+          </DrawerRoot>
         </Flex>
       </Container>
     </Box>
