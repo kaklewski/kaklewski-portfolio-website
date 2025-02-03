@@ -5,6 +5,7 @@ import {
   Flex,
   IconButton,
   Link,
+  Stack,
 } from '@chakra-ui/react'
 import {
   DrawerActionTrigger,
@@ -18,7 +19,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '../components/ui/drawer'
-import { IconMenu2 } from '@tabler/icons-react'
+import { IconMenu2, IconX } from '@tabler/icons-react'
+import { useState } from 'react'
 
 const links = [
   {
@@ -36,6 +38,8 @@ const links = [
 ]
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <Box
       as='nav'
@@ -71,7 +75,9 @@ export default function Navbar() {
             </Flex>
           </Box>
 
-          <DrawerRoot>
+          <DrawerRoot
+            open={isMenuOpen}
+            onOpenChange={e => setIsMenuOpen(e.open)}>
             <DrawerBackdrop />
             <DrawerTrigger asChild display={{ sm: 'none' }}>
               <IconButton
@@ -83,21 +89,38 @@ export default function Navbar() {
             </DrawerTrigger>
             <DrawerContent position='relative' zIndex='tooltip'>
               <DrawerHeader>
-                <DrawerTitle>Drawer Title</DrawerTitle>
+                <Flex justifyContent='end' alignItems='center'>
+                  <button
+                    type='button'
+                    aria-label='Close Menu'
+                    onClick={() => setIsMenuOpen(false)}>
+                    <IconX stroke={1.75} />
+                  </button>
+                </Flex>
               </DrawerHeader>
               <DrawerBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                <Flex
+                  direction='column'
+                  justifyContent='center'
+                  gap={10}
+                  height='100%'
+                  pb={100}>
+                  {links.map(link => (
+                    <Button
+                      variant='ghost'
+                      size='lg'
+                      onClick={() => setIsMenuOpen(false)}
+                      fontSize={25}
+                      textAlign='start'>
+                      <NavbarLink
+                        key={link.name}
+                        linkName={link.name}
+                        linkHref={link.href}
+                      />
+                    </Button>
+                  ))}
+                </Flex>
               </DrawerBody>
-              <DrawerFooter>
-                <DrawerActionTrigger asChild>
-                  <Button variant='outline'>Cancel</Button>
-                </DrawerActionTrigger>
-                <Button>Save</Button>
-              </DrawerFooter>
-              <DrawerCloseTrigger />
             </DrawerContent>
           </DrawerRoot>
         </Flex>
