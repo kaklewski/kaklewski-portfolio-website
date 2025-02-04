@@ -36,7 +36,11 @@ import React from 'react'
 
 export default function Skills() {
   return (
-    <Container maxW='7xl' id='skills' py={{ base: 20, md: 36 }}>
+    <Container
+      maxW='7xl'
+      id='skills'
+      py={{ base: 20, md: 36 }}
+      backgroundImage='url(background.png)'>
       <Heading size='4xl' mb={4}>
         My Skills && Stack
       </Heading>

@@ -73,7 +73,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Container maxW='7xl' id='projects' py={{ base: 20, md: 36 }}>
+    <Container
+      maxW='7xl'
+      id='projects'
+      py={{ base: 20, md: 36 }}
+      backgroundImage='url(background.png)'>
       <Heading size='4xl' mb={4}>
         Featured Projects && Clients
       </Heading>
