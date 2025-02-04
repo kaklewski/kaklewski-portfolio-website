@@ -4,7 +4,7 @@ import {
   Container,
   Flex,
   IconButton,
-  Link,
+  Text,
 } from '@chakra-ui/react'
 import {
   DrawerBackdrop,
@@ -49,15 +49,11 @@ export default function Navbar() {
       backdropFilter='blur(13px) saturate(150%)'>
       <Container maxW='7xl'>
         <Flex justify='space-between' align='center'>
-          <Link
-            href='/'
-            fontSize='xl'
-            fontWeight='bold'
-            _hover={{
-              textDecoration: 'none',
-            }}>
-            Oskar Kąklewski
-          </Link>
+          <Button variant='plain' p={0} onClick={() => scrollToSection('body')}>
+            <Text as='h1' fontSize='2xl' fontWeight='bold'>
+              Oskar Kąklewski
+            </Text>
+          </Button>
 
           <Box display={{ base: 'none', sm: 'inline-block' }}>
             <Flex gap={6}>
@@ -136,7 +132,7 @@ function NavbarLink({ linkName, linkHref }: NavbarLinkProps) {
   return (
     <Button
       variant='plain'
-      size='lg'
+      size='xl'
       p={0}
       _hover={{
         textDecoration: 'none',
@@ -156,11 +152,11 @@ type MenuLinkProps = NavbarLinkProps & {
 function MenuLink({ linkName, linkHref, closeMenu }: MenuLinkProps) {
   return (
     <Button
+      className='accent-font'
       variant='plain'
       p={0}
       color='white'
       fontSize={40}
-      fontWeight='900'
       onClick={() => {
         closeMenu(false)
         scrollToSection(linkHref)
