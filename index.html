@@ -5,19 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oskar Kąklewski | Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet" />
+
     <style>
       :root {
         color-scheme: dark;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         background-color: #09090b;
+        font-family: 'Inter', serif;
+        font-optical-sizing: auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      .accent-font {
+        font-family: 'Space Grotesk', serif;
       }
     </style>
   </head>
-  <body>
+  <body id="body">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
