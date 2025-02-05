@@ -48,12 +48,28 @@ export default function Hero() {
               Oskar
             </Text>
           </Heading>
-          <Text color='gray.300' textShadow='0 0 3px #09090B'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi ab
-            fugit voluptates atque odit, porro exercitationem sit, rem id
-            aliquid asperiores iusto, mollitia architecto. Pariatur ab corporis
-            sit ratione consequuntur reiciendis.
-          </Text>
+          <Box backdropFilter='blur(2px)' borderRadius='xl' position='relative'>
+            <Box
+              position='absolute'
+              display={{ base: 'none', md: 'block' }}
+              w='100%'
+              h='50px'
+              borderRadius='100%'
+              top='10px'
+              bgColor='#09090B'
+              filter='blur(35px)'></Box>
+
+            <Text
+              textShadow='0 1px 25px #09090B'
+              position='relative'
+              zIndex='1'>
+              I'm a Front-End Developer who builds fast, modern, and intuitive
+              web applications. With React, TypeScript, and a keen eye for
+              detail, I focus on creating smooth and engaging user experiences.
+              I believe great design meets great code—clean, efficient, and
+              built to last.
+            </Text>
+          </Box>
           <Stack direction='row' align='center' alignSelf='center'>
             <Button
               variant='surface'
