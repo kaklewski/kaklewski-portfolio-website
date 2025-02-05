@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Container,
+  Flex,
   HStack,
   Image,
   SimpleGrid,
@@ -16,15 +17,16 @@ const projects = [
     image: 'screenshots/kalkdoktor.png',
     name: 'Kalkdoktor',
     description:
-      'Medical calculators and scales to help doctors diagnose their patients.',
-    tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
+      'This is a web application designed as a toolkit for doctors, featuring a collection of medical calculators and scales that assist in diagnosing patients and selecting appropriate treatments. The app works fully offline and allows users to save their favorite calculators.',
+    tools: ['React', 'TypeScript', 'Chakra UI', 'Vite', 'PWA'],
     demoUrl: 'https://kalkdoktor.pl',
     codeUrl: 'https://github.com/kaklewski/kalkdoktor',
   },
   {
     image: 'screenshots/zenith-calendar.png',
     name: 'Zenith Calendar',
-    description: 'An advanced calendar app inspired by Google Calendar.',
+    description:
+      "A web application inspired by Google Docs that enables users to add and manage events in a modern and convenient way. Events are stored in the browser's local storage. The app also allows users to customize their preferred theme and the starting day of the week.",
     tools: ['React', 'TypeScript', 'SASS', 'Vite'],
     demoUrl: 'https://zenith-calendar.netlify.app',
     codeUrl: 'https://github.com/kaklewski/zenith-calendar',
@@ -32,15 +34,17 @@ const projects = [
   {
     image: 'screenshots/zenith-docs.png',
     name: 'Zenith Docs',
-    description: 'A modern, collaborative text editor inspired by Google Docs.',
+    description:
+      'A web application inspired by Google Docs that offers advanced text editing and real-time collaboration between multiple users. Content is automatically saved and synchronized using Google Firebase.',
     tools: ['React', 'TypeScript', 'SASS', 'Firebase', 'Vite'],
     demoUrl: 'https://zenith-docs.netlify.app/',
     codeUrl: 'https://github.com/kaklewski/zenith-docs',
   },
   {
     image: 'screenshots/pokedex.png',
-    name: 'Pokedex',
-    description: 'Find your favorite pokemon and read information about them.',
+    name: 'Pokédex',
+    description:
+      'Pokédex is a project that utilizes the PokéAPI, allowing users to search through the first-generation Pokémon list and view detailed information and images for each Pokémon.',
     tools: ['React', 'JavaScript', 'SASS', 'Vite'],
     demoUrl: 'https://kaklewski.github.io/pokemon-search',
     codeUrl: 'https://github.com/kaklewski/pokemon-search',
@@ -48,7 +52,8 @@ const projects = [
   {
     image: 'screenshots/gymnormous.png',
     name: 'GYMnormous',
-    description: '.',
+    description:
+      'A modern fitness application designed for workout enthusiasts. It allows users to create a personalized workout plan based on selected parameters such as workout type, targeted muscle groups, and fitness goals.',
     tools: ['React', 'JavaScript', 'Tailwind CSS', 'Vite'],
     demoUrl: 'https://kaklewski.github.io/gymnormous',
     codeUrl: 'https://github.com/kaklewski/gymnormous',
@@ -56,16 +61,18 @@ const projects = [
   {
     image: 'screenshots/projekty-wnetrz.png',
     name: 'Projekty Wnętrz',
-    description: "An interior designer's portfolio website.",
-    tools: ['JavaScript', 'HTML5', 'SASS', 'Vite'],
+    description:
+      'A portfolio website for an interior designer, created for one of my clients. The website follows a minimalist design, aiming to showcase projects and pricing in an appealing way. It is fully responsive and adapts to all devices.',
+    tools: ['JavaScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
     demoUrl: 'https://projektywnetrz.net',
     codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
   },
   {
     image: 'screenshots/stomatolog-piasecki.png',
     name: 'Stomatolog Piasecki',
-    description: 'A dental website made for one of my clients.',
-    tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp'],
+    description:
+      'A website for a dental clinic, created for one of my clients. It is a fully responsive and modern-looking website that adjusts seamlessly to all devices.',
+    tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp', 'RWD'],
     demoUrl: 'https://stomatologpiasecki.pl',
     codeUrl: 'https://github.com/kaklewski/stomatolog-piasecki',
   },
@@ -115,7 +122,11 @@ function ProjectCard({
   codeUrl,
 }: ProjectCardProps) {
   return (
-    <Card.Root overflow='hidden'>
+    <Card.Root
+      overflow='hidden'
+      display='flex'
+      direction='column'
+      justifyContent='space-between'>
       <Box maxW='100%' aspectRatio='16/9' overflow={'hidden'}>
         <Image
           objectFit='cover'
@@ -126,12 +137,12 @@ function ProjectCard({
           _hover={{ scale: '1.03' }}
         />
       </Box>
-      <Box>
-        <Card.Body>
+      <Flex direction='column' justifyContent='space-between' flexGrow='2'>
+        <Card.Body display='flex' flexDir='column' flexGrow='2'>
           <Card.Title mb='2' fontSize='xl'>
             {name}
           </Card.Title>
-          <Card.Description>{description}</Card.Description>
+          <Card.Description flexGrow='2'>{description}</Card.Description>
           <HStack mt='4'>
             {tools.map(tool => (
               <Badge key={tool} variant='outline' colorPalette='teal'>
@@ -153,7 +164,7 @@ function ProjectCard({
             </a>
           </Button>
         </Card.Footer>
-      </Box>
+      </Flex>
     </Card.Root>
   )
 }
