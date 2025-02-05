@@ -1,6 +1,6 @@
 import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react'
 import { IconArrowUpDashed } from '@tabler/icons-react'
-import { scrollToSection } from '../utils/scrollToSection'
+import { scrollToSection } from '../../utils/scrollToSection'
 
 export default function Footer() {
   const year = new Date().getFullYear()

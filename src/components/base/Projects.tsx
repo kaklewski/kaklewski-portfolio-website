@@ -4,19 +4,19 @@ import {
   Button,
   Card,
   Container,
-  Heading,
   HStack,
   Image,
   SimpleGrid,
 } from '@chakra-ui/react'
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react'
+import CustomHeading from '../elements/Heading'
 
 const projects = [
   {
     image: 'screenshots/kalkdoktor.png',
     name: 'Kalkdoktor',
     description:
-      'A web app with medical calculators and scales that help doctors diagnose their patients and choose the right treatment.',
+      'Medical calculators and scales to help doctors diagnose their patients.',
     tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
     demoUrl: 'https://kalkdoktor.pl',
     codeUrl: 'https://github.com/kaklewski/kalkdoktor',
@@ -24,7 +24,7 @@ const projects = [
   {
     image: 'screenshots/zenith-calendar.png',
     name: 'Zenith Calendar',
-    description: 'A calendar app inspired by Google Calendar.',
+    description: 'An advanced calendar app inspired by Google Calendar.',
     tools: ['React', 'TypeScript', 'SASS', 'Vite'],
     demoUrl: 'https://zenith-calendar.netlify.app',
     codeUrl: 'https://github.com/kaklewski/zenith-calendar',
@@ -40,7 +40,7 @@ const projects = [
   {
     image: 'screenshots/pokedex.png',
     name: 'Pokedex',
-    description: 'Fetch API and search your favorite pokemon.',
+    description: 'Find your favorite pokemon and read information about them.',
     tools: ['React', 'JavaScript', 'SASS', 'Vite'],
     demoUrl: 'https://kaklewski.github.io/pokemon-search',
     codeUrl: 'https://github.com/kaklewski/pokemon-search',
@@ -48,7 +48,7 @@ const projects = [
   {
     image: 'screenshots/gymnormous.png',
     name: 'GYMnormous',
-    description: 'Fetch API and search your favorite pokemon.',
+    description: '.',
     tools: ['React', 'JavaScript', 'Tailwind CSS', 'Vite'],
     demoUrl: 'https://kaklewski.github.io/gymnormous',
     codeUrl: 'https://github.com/kaklewski/gymnormous',
@@ -78,23 +78,20 @@ export default function Projects() {
       id='projects'
       py={{ base: 20, md: 36 }}
       backgroundImage='url(background.png)'>
-      <Heading size='4xl' mb={4}>
-        Featured Projects && Clients
-      </Heading>
+      <CustomHeading text='Featured Projects && Clients' />
 
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-        {projects.map(project => {
-          return (
-            <ProjectCard
-              image={project.image}
-              name={project.name}
-              description={project.description}
-              tools={project.tools}
-              demoUrl={project.demoUrl}
-              codeUrl={project.codeUrl}
-            />
-          )
-        })}
+        {projects.map(project => (
+          <ProjectCard
+            key={project.name}
+            image={project.image}
+            name={project.name}
+            description={project.description}
+            tools={project.tools}
+            demoUrl={project.demoUrl}
+            codeUrl={project.codeUrl}
+          />
+        ))}
       </SimpleGrid>
     </Container>
   )
@@ -131,11 +128,13 @@ function ProjectCard({
       </Box>
       <Box>
         <Card.Body>
-          <Card.Title mb='2'>{name}</Card.Title>
+          <Card.Title mb='2' fontSize='xl'>
+            {name}
+          </Card.Title>
           <Card.Description>{description}</Card.Description>
           <HStack mt='4'>
             {tools.map(tool => (
-              <Badge variant='outline' colorPalette='teal'>
+              <Badge key={tool} variant='outline' colorPalette='teal'>
                 {tool}
               </Badge>
             ))}

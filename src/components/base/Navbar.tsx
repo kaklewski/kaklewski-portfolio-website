@@ -13,10 +13,10 @@ import {
   DrawerHeader,
   DrawerRoot,
   DrawerTrigger,
-} from '../components/ui/drawer'
+} from '../ui/drawer'
 import { IconMenu2, IconX } from '@tabler/icons-react'
 import { useState } from 'react'
-import { scrollToSection } from '../utils/scrollToSection'
+import { scrollToSection } from '../../utils/scrollToSection'
 
 const links = [
   {

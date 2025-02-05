@@ -1,11 +1,4 @@
-import {
-  Container,
-  SimpleGrid,
-  Card,
-  Heading,
-  Badge,
-  Flex,
-} from '@chakra-ui/react'
+import { Container, SimpleGrid, Card, Badge, Flex } from '@chakra-ui/react'
 import {
   SiChakraui,
   SiCss,
@@ -33,6 +26,7 @@ import {
   IconVersions,
 } from '@tabler/icons-react'
 import React from 'react'
+import CustomHeading from '../elements/Heading'
 
 export default function Skills() {
   return (
@@ -41,9 +35,8 @@ export default function Skills() {
       id='skills'
       py={{ base: 20, md: 36 }}
       backgroundImage='url(background.png)'>
-      <Heading size='4xl' mb={4}>
-        My Skills && Stack
-      </Heading>
+      <CustomHeading text='My Skills && Stack' />
+
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
         <SkillCard title='JavaScript'>
           <SkillBadge color='cyan'>

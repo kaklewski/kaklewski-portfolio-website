@@ -13,8 +13,8 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from '@tabler/icons-react'
-import { scrollToSection } from '../utils/scrollToSection'
-import HeroBgImage from '../img/hero-background.svg'
+import { scrollToSection } from '../../utils/scrollToSection'
+import HeroBgImage from '../../img/hero-background.svg'
 
 export default function Hero() {
   return (

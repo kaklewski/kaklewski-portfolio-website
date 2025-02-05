@@ -5,7 +5,6 @@ import {
   Container,
   Field,
   Flex,
-  Heading,
   Input,
   Link,
   SimpleGrid,
@@ -19,6 +18,7 @@ import {
   IconMapPin,
   IconSend,
 } from '@tabler/icons-react'
+import CustomHeading from '../elements/Heading'
 
 export default function Contact() {
   return (
@@ -27,9 +27,7 @@ export default function Contact() {
       id='contact'
       py={{ base: 20, md: 36 }}
       backgroundImage='url(background.png)'>
-      <Heading size='4xl' mb={4}>
-        Contact Me || Say Hello
-      </Heading>
+      <CustomHeading text='Contact Me || Say Hello' />
 
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 16, md: 6 }}>
         <Card.Root variant='outline'>

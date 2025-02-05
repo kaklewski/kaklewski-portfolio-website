@@ -1,10 +1,10 @@
 import { Box, Separator, Theme } from '@chakra-ui/react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Navbar from './components/base/Navbar'
+import Hero from './components/base/Hero'
+import Skills from './components/base/Skills'
+import Projects from './components/base/Projects'
+import Contact from './components/base/Contact'
+import Footer from './components/base/Footer'
 
 export default function App() {
   return (
