@@ -77,7 +77,7 @@ export default function Contact() {
         </Card.Root>
 
         <Flex justifyContent='center' alignItems='center'>
-          <Flex direction='column' gap={12} color='teal.400'>
+          <Flex direction='column' gap={{ base: 8, md: 12 }} color='teal.400'>
             <Box>
               <Flex gap={1} alignItems='center'>
                 <IconMapPin stroke={1} size={50} />
