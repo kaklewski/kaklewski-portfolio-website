@@ -38,9 +38,9 @@ export default function Contact() {
               data-netlify='true'
               data-netlify-honeypot='bot-field'>
               <Stack gap={6}>
-                <Field.Root display='none'>
+                <Field.Root maxH='0' maxW='0' visibility='collapse' position='absolute'>
                   <Field.Label>Bot</Field.Label>
-                  <Input type='text' name='bot-filed' title='bot-field' />
+                  <Input name='bot-filed' title='bot-field' />
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Name</Field.Label>
