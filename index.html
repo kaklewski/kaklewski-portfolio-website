@@ -69,13 +69,6 @@
           transform: rotate(360deg);
         }
       }
-
-      .fake-form {
-        visibility: hidden;
-        position: absolute;
-        width: 1px;
-        height: 1px;
-      }
     </style>
   </head>
   <body id="body">
@@ -86,7 +79,7 @@
 
       <!-- This is to make sure Netlify Forms detect the form properly -->
       <form
-        class="fake-form"
+        hidden
         name="contact"
         method="POST"
         data-netlify="true"
@@ -96,7 +89,6 @@
         <input placeholder="skyler@gmail.com" type="email" name="email" />
         <textarea
           placeholder="My name is Skyler White, yo!"
-          rows="{5}"
           name="message"></textarea>
       </form>
     </div>
