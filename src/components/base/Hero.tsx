@@ -38,7 +38,7 @@ export default function Hero() {
         borderRadius={{ base: '50px', md: '100px' }}></Box>
 
       <Container maxW='3xl' id='about'>
-        <Stack textAlign='center' py={{ base: 20, md: 36 }} gap={8}>
+        <Stack textAlign='center' py={{ base: 20, md: 36 }} gap={6}>
           <Heading
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
@@ -53,21 +53,21 @@ export default function Hero() {
               position='absolute'
               display={{ base: 'none', md: 'block' }}
               w='100%'
-              h='50px'
+              h='100%'
               borderRadius='100%'
               top='10px'
               bgColor='#09090B'
               filter='blur(35px)'></Box>
 
             <Text
-              textShadow='0 1px 25px #09090B'
               position='relative'
-              zIndex='1'>
-              I'm a Front-End Developer who builds fast, modern, and intuitive
-              web applications. With React, TypeScript, and a keen eye for
-              detail, I focus on creating smooth and engaging user experiences.
-              I believe great design meets great code—clean, efficient, and
-              built to last.
+              zIndex='1'
+              maxW='80vw'
+              textShadow='0 1px 25px #09090B'
+              marginInline='auto'
+              fontSize={{ base: 'sm', sm: 'md', md: 'lg' }}>
+              I'm a Front-End Developer who builds fast, modern, and great
+              looking web apps.
             </Text>
           </Box>
           <Stack direction='row' align='center' alignSelf='center'>
