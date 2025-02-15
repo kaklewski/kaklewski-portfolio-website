@@ -25,12 +25,13 @@ export default function Hero() {
       alignItems='center'
       height={{ md: '100vh' }}
       backgroundImage='url(background.png)'>
-      <Box position='absolute' w={{ base: '450px', md: '900px' }}>
+      <Box position='absolute' maxW='100%' w={{ base: '450px', md: '900px' }}>
         <HeroBgImage />
       </Box>
 
       <Box
         position='absolute'
+        maxW='100%'
         w={{ base: '135px', md: '250px' }}
         h={{ base: '40px', md: '80px' }}
         bgColor='teal.400'
