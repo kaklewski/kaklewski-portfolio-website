@@ -44,7 +44,7 @@ export default function Contact() {
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Email</Field.Label>
-                  <Input placeholder='skyler@gmail.com' type='email' name='email' />
+                  <Input placeholder='skyler.white@proton.me' type='email' name='email' />
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Message</Field.Label>
