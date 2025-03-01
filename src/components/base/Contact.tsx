@@ -12,12 +12,7 @@ import {
   Text,
   Textarea,
 } from '@chakra-ui/react'
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMapPin,
-  IconSend,
-} from '@tabler/icons-react'
+import { IconBrandGithub, IconBrandLinkedin, IconMapPin, IconSend } from '@tabler/icons-react'
 import CustomHeading from '../elements/Heading'
 
 export default function Contact() {
@@ -39,13 +34,9 @@ export default function Contact() {
               data-netlify-honeypot='bot-field'>
               <input type='hidden' name='form-name' value='contact' />
               <Stack gap={6}>
-                <Field.Root
-                  maxH='0'
-                  maxW='0'
-                  visibility='collapse'
-                  position='absolute'>
+                <Field.Root maxH='0' maxW='0' visibility='collapse' position='absolute'>
                   <Field.Label>Bot</Field.Label>
-                  <Input name='bot-filed' title='bot-field' />
+                  <Input name='bot-field' title='bot-field' />
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Name</Field.Label>
@@ -53,19 +44,11 @@ export default function Contact() {
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Email</Field.Label>
-                  <Input
-                    placeholder='skyler@gmail.com'
-                    type='email'
-                    name='email'
-                  />
+                  <Input placeholder='skyler@gmail.com' type='email' name='email' />
                 </Field.Root>
                 <Field.Root required>
                   <Field.Label>Message</Field.Label>
-                  <Textarea
-                    placeholder='My name is Skyler White, yo!'
-                    rows={5}
-                    name='message'
-                  />
+                  <Textarea placeholder='My name is Skyler White, yo!' rows={5} name='message' />
                 </Field.Root>
                 <Button
                   variant='surface'
