@@ -151,12 +151,12 @@ function ProjectCard({ image, name, description, tools, demoUrl, codeUrl }: Proj
         </Card.Body>
         <Card.Footer>
           <Button rounded='full' asChild>
-            <a href={demoUrl}>
+            <a href={demoUrl} target='_blank'>
               <IconExternalLink stroke={1.75} /> Live Version
             </a>
           </Button>
           <Button variant='surface' rounded='full' asChild>
-            <a href={codeUrl}>
+            <a href={codeUrl} target='_blank'>
               <IconBrandGithub stroke={1.75} />
               Source Code
             </a>
