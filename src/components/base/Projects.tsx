@@ -50,6 +50,15 @@ const projects = [
     codeUrl: 'https://github.com/kaklewski/pokemon-search',
   },
   {
+    image: 'screenshots/portfolio.png',
+    name: 'Kaklewski Portfolio Website',
+    description:
+      'A modern Front End developer portfolio with a minimalist design. Created to highlight skills, projects, and experience in a clear and professional manner, ensuring viewers have an intuitive and enjoyable browsing experience.',
+    tools: ['React', 'JavaScript', 'Chakra UI', 'Vite'],
+    demoUrl: 'https://kaklewski.pl',
+    codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
+  },
+  {
     image: 'screenshots/gymnormous.png',
     name: 'GYMnormous',
     description:
@@ -113,20 +122,9 @@ type ProjectCardProps = {
   codeUrl: string
 }
 
-function ProjectCard({
-  image,
-  name,
-  description,
-  tools,
-  demoUrl,
-  codeUrl,
-}: ProjectCardProps) {
+function ProjectCard({ image, name, description, tools, demoUrl, codeUrl }: ProjectCardProps) {
   return (
-    <Card.Root
-      overflow='hidden'
-      display='flex'
-      direction='column'
-      justifyContent='space-between'>
+    <Card.Root overflow='hidden' display='flex' direction='column' justifyContent='space-between'>
       <Box maxW='100%' aspectRatio='16/9' overflow={'hidden'}>
         <Image
           objectFit='cover'
