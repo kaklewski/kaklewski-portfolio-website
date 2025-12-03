@@ -25,16 +25,17 @@ import {
     IconMilkshake,
     IconVersions,
 } from '@tabler/icons-react';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import CustomHeading from '../elements/Heading';
 
-export default function Skills() {
+const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Container
             maxW="7xl"
             id="skills"
             py={{ base: 20, md: 36 }}
             backgroundImage="url(background.png)"
+            ref={ref}
         >
             <CustomHeading text="My Skills && Stack" />
 
@@ -147,14 +148,14 @@ export default function Skills() {
             </SimpleGrid>
         </Container>
     );
-}
+});
 
 type SkillCardProps = {
     children: React.ReactNode;
     title: string;
 };
 
-function SkillCard({ children, title }: SkillCardProps) {
+const SkillCard = ({ children, title }: SkillCardProps) => {
     return (
         <Card.Root variant="outline">
             <Card.Header>
@@ -167,14 +168,14 @@ function SkillCard({ children, title }: SkillCardProps) {
             </Card.Body>
         </Card.Root>
     );
-}
+};
 
 type SkillBadgeProps = {
     children: React.ReactNode;
     color: string;
 };
 
-function SkillBadge({ children, color }: SkillBadgeProps) {
+const SkillBadge = ({ children, color }: SkillBadgeProps) => {
     return (
         <Badge
             size={{ base: 'md', lg: 'lg' }}
@@ -187,4 +188,6 @@ function SkillBadge({ children, color }: SkillBadgeProps) {
             </Flex>
         </Badge>
     );
-}
+};
+
+export default SkillsSection;

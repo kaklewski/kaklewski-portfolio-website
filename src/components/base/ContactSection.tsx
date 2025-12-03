@@ -18,15 +18,17 @@ import {
     IconMapPin,
     IconSend,
 } from '@tabler/icons-react';
+import { forwardRef } from 'react';
 import CustomHeading from '../elements/Heading';
 
-export default function Contact() {
+const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Container
             maxW="7xl"
             id="contact"
             py={{ base: 20, md: 36 }}
             backgroundImage="url(background.png)"
+            ref={ref}
         >
             <CustomHeading text="Contact Me || Say Hello" />
 
@@ -148,4 +150,6 @@ export default function Contact() {
             </SimpleGrid>
         </Container>
     );
-}
+});
+
+export default ContactSection;

@@ -1,24 +1,38 @@
 import { Box, Separator, Theme } from '@chakra-ui/react';
-import Contact from './components/base/Contact';
+import { useRef } from 'react';
+import ContactSection from './components/base/ContactSection';
 import Footer from './components/base/Footer';
-import Hero from './components/base/Hero';
+import HeroSection from './components/base/HeroSection';
 import Navbar from './components/base/Navbar';
-import Projects from './components/base/Projects';
-import Skills from './components/base/Skills';
+import ProjectsSection from './components/base/ProjectsSection';
+import SkillsSection from './components/base/SkillsSection';
 
-export default function App() {
+const App = () => {
+    const mainContentRef = useRef<HTMLDivElement>(null);
+    const skillsSectionRef = useRef<HTMLDivElement>(null);
+    const projectsSectionRef = useRef<HTMLDivElement>(null);
+    const contactSectionRef = useRef<HTMLDivElement>(null);
+    const sections = {
+        main: mainContentRef,
+        skills: skillsSectionRef,
+        projects: projectsSectionRef,
+        contact: contactSectionRef,
+    };
+
     return (
         <Theme appearance="dark">
-            <Navbar />
-            <Box as="main" id="main">
-                <Hero />
-                <Skills />
+            <Navbar sections={sections} />
+            <Box as="main" ref={mainContentRef}>
+                <HeroSection skillsSectionRef={skillsSectionRef} />
+                <SkillsSection ref={skillsSectionRef} />
                 <Separator />
-                <Projects />
+                <ProjectsSection ref={projectsSectionRef} />
                 <Separator />
-                <Contact />
-                <Footer />
+                <ContactSection ref={contactSectionRef} />
+                <Footer mainContentRef={mainContentRef} />
             </Box>
         </Theme>
     );
-}
+};
+
+export default App;

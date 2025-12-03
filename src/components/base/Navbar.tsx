@@ -7,7 +7,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { IconMenu2, IconX } from '@tabler/icons-react';
-import { useState } from 'react';
+import { RefObject, useState } from 'react';
 import { scrollToSection } from '../../utils/scrollToSection';
 import {
     DrawerBackdrop,
@@ -18,23 +18,25 @@ import {
     DrawerTrigger,
 } from '../ui/drawer';
 
-const links = [
-    {
-        name: 'Skills',
-        href: 'skills',
-    },
-    {
-        name: 'Projects',
-        href: 'projects',
-    },
-    {
-        name: 'Contact',
-        href: 'contact',
-    },
-];
+type NavbarProps = {
+    sections: {
+        main: RefObject<HTMLDivElement>;
+        skills: RefObject<HTMLDivElement>;
+        projects: RefObject<HTMLDivElement>;
+        contact: RefObject<HTMLDivElement>;
+    };
+};
 
-export default function Navbar() {
+type SectionKey = keyof NavbarProps['sections'];
+
+const Navbar = ({ sections }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const links: { name: string; key: SectionKey }[] = [
+        { name: 'Skills', key: 'skills' },
+        { name: 'Projects', key: 'projects' },
+        { name: 'Contact', key: 'contact' },
+    ];
 
     return (
         <Box
@@ -53,7 +55,7 @@ export default function Navbar() {
                     <Button
                         variant="plain"
                         p={0}
-                        onClick={() => scrollToSection('body')}
+                        onClick={() => scrollToSection(sections.main)}
                     >
                         <Text as="h1" fontSize="2xl" fontWeight="bold">
                             Oskar Kąklewski
@@ -63,10 +65,13 @@ export default function Navbar() {
                     <Box display={{ base: 'none', sm: 'inline-block' }}>
                         <Flex gap={6}>
                             {links.map((link) => (
-                                <NavbarLink
+                                <NavLinkButton
                                     key={link.name}
-                                    linkName={link.name}
-                                    linkHref={link.href}
+                                    type="navbar"
+                                    name={link.name}
+                                    handleClick={() => {
+                                        scrollToSection(sections[link.key]);
+                                    }}
                                 />
                             ))}
                         </Flex>
@@ -116,11 +121,17 @@ export default function Navbar() {
                                     pb={100}
                                 >
                                     {links.map((link) => (
-                                        <MenuLink
+                                        <NavLinkButton
                                             key={link.name}
-                                            linkName={link.name}
-                                            linkHref={link.href}
-                                            closeMenu={setIsMenuOpen}
+                                            type="menu"
+                                            name={link.name}
+                                            handleClick={() => {
+                                                setIsMenuOpen(false);
+                                                scrollToSection(
+                                                    sections[link.key],
+                                                    50,
+                                                );
+                                            }}
                                         />
                                     ))}
                                 </Flex>
@@ -131,49 +142,24 @@ export default function Navbar() {
             </Container>
         </Box>
     );
-}
-
-type NavbarLinkProps = {
-    linkName: string;
-    linkHref: string;
 };
 
-function NavbarLink({ linkName, linkHref }: NavbarLinkProps) {
-    return (
-        <Button
-            variant="plain"
-            size="xl"
-            p={0}
-            _hover={{
-                textDecoration: 'none',
-                color: 'teal.400',
-            }}
-            transition="color .12s"
-            onClick={() => scrollToSection(linkHref)}
-        >
-            {linkName}
-        </Button>
-    );
-}
-
-type MenuLinkProps = NavbarLinkProps & {
-    closeMenu: (arg: boolean) => void;
+type NavLinkButtonProps = {
+    type: 'navbar' | 'menu';
+    name: string;
+    handleClick: () => void;
 };
 
-function MenuLink({ linkName, linkHref, closeMenu }: MenuLinkProps) {
-    return (
-        <Button
-            className="accent-font"
-            variant="plain"
-            p={0}
-            color="white"
-            fontSize={40}
-            onClick={() => {
-                closeMenu(false);
-                scrollToSection(linkHref);
-            }}
-        >
-            {linkName}
-        </Button>
-    );
-}
+const NavLinkButton = ({ type, name, handleClick }: NavLinkButtonProps) => (
+    <Button
+        variant="plain"
+        p={0}
+        fontSize={type === 'menu' ? 40 : undefined}
+        size={type === 'navbar' ? 'xl' : 'md'}
+        onClick={handleClick}
+    >
+        {name}
+    </Button>
+);
+
+export default Navbar;

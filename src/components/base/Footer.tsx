@@ -1,8 +1,13 @@
 import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react';
 import { IconArrowUpDashed } from '@tabler/icons-react';
+import { RefObject } from 'react';
 import { scrollToSection } from '../../utils/scrollToSection';
 
-export default function Footer() {
+type FooterProps = {
+    mainContentRef: RefObject<HTMLDivElement>;
+};
+
+const Footer = ({ mainContentRef }: FooterProps) => {
     const year = new Date().getFullYear();
 
     return (
@@ -17,7 +22,7 @@ export default function Footer() {
                             rounded="full"
                             variant="outline"
                             aria-label="Back to the top"
-                            onClick={() => scrollToSection('body')}
+                            onClick={() => scrollToSection(mainContentRef)}
                         >
                             <IconArrowUpDashed stroke={1.75} />
                         </IconButton>
@@ -26,4 +31,6 @@ export default function Footer() {
             </Container>
         </Box>
     );
-}
+};
+
+export default Footer;

@@ -13,10 +13,15 @@ import {
     IconBrandGithub,
     IconBrandLinkedin,
 } from '@tabler/icons-react';
+import { RefObject } from 'react';
 import HeroBgImage from '../../img/hero-background.svg';
 import { scrollToSection } from '../../utils/scrollToSection';
 
-export default function Hero() {
+type HeroProps = {
+    skillsSectionRef: RefObject<HTMLDivElement>;
+};
+
+const HeroSection = ({ skillsSectionRef }: HeroProps) => {
     return (
         <Flex
             position="relative"
@@ -92,8 +97,8 @@ export default function Hero() {
                             size="xl"
                             asChild
                         >
-                            <a href="https://www.linkedin.com/in/oskar-kaklewski/">
-                                <IconBrandLinkedin stroke={1.75} /> LinkedIn
+                            <a href="https://github.com/kaklewski/">
+                                <IconBrandGithub stroke={1.75} /> GitHub
                             </a>
                         </Button>
                         <Button
@@ -103,8 +108,8 @@ export default function Hero() {
                             size="xl"
                             asChild
                         >
-                            <a href="https://github.com/kaklewski/">
-                                <IconBrandGithub stroke={1.75} /> GitHub
+                            <a href="https://www.linkedin.com/in/oskar-kaklewski/">
+                                <IconBrandLinkedin stroke={1.75} /> LinkedIn
                             </a>
                         </Button>
                     </Stack>
@@ -120,11 +125,13 @@ export default function Hero() {
                     variant="outline"
                     rounded="full"
                     size="lg"
-                    onClick={() => scrollToSection('skills')}
+                    onClick={() => scrollToSection(skillsSectionRef)}
                 >
                     <IconArrowDownDashed stroke={1.75} />
                 </IconButton>
             </Box>
         </Flex>
     );
-}
+};
+
+export default HeroSection;
