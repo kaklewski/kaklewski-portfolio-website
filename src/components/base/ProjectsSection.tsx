@@ -13,7 +13,7 @@ import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import { forwardRef } from 'react';
 import CustomHeading from '../elements/Heading';
 
-const ProjectsSection = forwardRef<HTMLDivElement>((props, ref) => {
+const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const projects = [
         {
             image: 'screenshots/kalkdoktor.png',
@@ -177,7 +177,7 @@ const ProjectCard = ({
                 <Card.Footer>
                     <Button rounded="full" asChild>
                         <a href={demoUrl} target="_blank">
-                            <IconExternalLink stroke={1.75} /> Live Version
+                            <IconExternalLink stroke={1.75} /> Live Demo
                         </a>
                     </Button>
                     <Button variant="surface" rounded="full" asChild>

@@ -22,7 +22,7 @@ import { FormEvent, forwardRef, useCallback } from 'react';
 import CustomHeading from '../elements/Heading';
 import { Toaster, toaster } from '../ui/toaster';
 
-const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
+const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
     const handleSubmit = useCallback(
         async (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault();

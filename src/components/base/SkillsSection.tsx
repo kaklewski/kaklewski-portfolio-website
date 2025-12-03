@@ -28,7 +28,7 @@ import {
 import React, { forwardRef } from 'react';
 import CustomHeading from '../elements/Heading';
 
-const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
+const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <Container
             maxW="7xl"
