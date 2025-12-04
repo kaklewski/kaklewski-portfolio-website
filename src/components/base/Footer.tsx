@@ -22,7 +22,7 @@ const Footer = ({ mainContentRef }: FooterProps) => {
                             rounded="full"
                             variant="outline"
                             aria-label="Back to the top"
-                            onClick={() => scrollToSection(mainContentRef)}
+                            onClick={() => scrollToSection(mainContentRef, 80)}
                         >
                             <IconArrowUpDashed stroke={1.75} />
                         </IconButton>
