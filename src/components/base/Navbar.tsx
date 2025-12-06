@@ -156,6 +156,7 @@ const NavLinkButton = ({ type, name, handleClick }: NavLinkButtonProps) => (
         p={0}
         fontSize={type === 'menu' ? 40 : undefined}
         size={type === 'navbar' ? 'xl' : 'md'}
+        color="#FAFAFA"
         onClick={handleClick}
     >
         {name}
