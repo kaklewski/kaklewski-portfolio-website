@@ -19,10 +19,13 @@ import {
     IconSend,
 } from '@tabler/icons-react';
 import { FormEvent, forwardRef, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/Heading';
 import { Toaster, toaster } from '../ui/toaster';
 
 const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
+    const { t } = useTranslation();
+
     const handleSubmit = useCallback(
         async (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault();
@@ -37,8 +40,8 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
                 });
 
                 toaster.create({
-                    title: 'Message sent!',
-                    description: 'Thanks for reaching out!',
+                    title: t('contactSection.toasts.success.title'),
+                    description: t('contactSection.toasts.success.description'),
                     type: 'success',
                     closable: true,
                 });
@@ -46,8 +49,8 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
                 form.reset();
             } catch (err) {
                 toaster.create({
-                    title: 'Error',
-                    description: `Something went wrong. Error description: ${(err as Error).message}`,
+                    title: t('contactSection.toasts.error.title'),
+                    description: `${t('contactSection.toasts.error.description')} ${(err as Error).message}`,
                     type: 'error',
                     closable: true,
                 });
@@ -66,7 +69,7 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
         >
             <Toaster />
 
-            <CustomHeading text="Contact Me || Say Hello" />
+            <CustomHeading text={t('contactSection.heading')} />
 
             <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 16, md: 6 }}>
                 <FormCard handleSubmit={handleSubmit} />
@@ -81,6 +84,8 @@ type FormCardProps = {
 };
 
 const FormCard = ({ handleSubmit }: FormCardProps) => {
+    const { t } = useTranslation();
+
     return (
         <Card.Root variant="outline">
             <Card.Body>
@@ -103,25 +108,37 @@ const FormCard = ({ handleSubmit }: FormCardProps) => {
                             <Input name="bot-field" title="bot-field" />
                         </Field.Root>
                         <Field.Root required>
-                            <Field.Label>Name</Field.Label>
+                            <Field.Label>
+                                {t('contactSection.contactForm.nameLabel')}
+                            </Field.Label>
                             <Input
-                                placeholder="Skyler White"
+                                placeholder={t(
+                                    'contactSection.contactForm.namePlaceholder',
+                                )}
                                 type="text"
                                 name="name"
                             />
                         </Field.Root>
                         <Field.Root required>
-                            <Field.Label>Email</Field.Label>
+                            <Field.Label>
+                                {t('contactSection.contactForm.emailLabel')}
+                            </Field.Label>
                             <Input
-                                placeholder="skyler.white@proton.me"
+                                placeholder={t(
+                                    'contactSection.contactForm.emailPlaceholder',
+                                )}
                                 type="email"
                                 name="email"
                             />
                         </Field.Root>
                         <Field.Root required>
-                            <Field.Label>Message</Field.Label>
+                            <Field.Label>
+                                {t('contactSection.contactForm.messageLabel')}
+                            </Field.Label>
                             <Textarea
-                                placeholder="My name is Skyler White, yo!"
+                                placeholder={t(
+                                    'contactSection.contactForm.messagePlaceholder',
+                                )}
                                 rows={5}
                                 name="message"
                             />
@@ -134,7 +151,8 @@ const FormCard = ({ handleSubmit }: FormCardProps) => {
                             colorPalette="teal"
                             type="submit"
                         >
-                            <IconSend /> Submit
+                            <IconSend />{' '}
+                            {t('contactSection.contactForm.submitButton')}
                         </Button>
                     </Stack>
                 </form>
@@ -144,6 +162,8 @@ const FormCard = ({ handleSubmit }: FormCardProps) => {
 };
 
 const SocialLinks = () => {
+    const { t } = useTranslation();
+
     return (
         <Flex justifyContent="center" alignItems="center">
             <Flex direction="column" gap={{ base: 8, md: 12 }} color="teal.400">
@@ -155,7 +175,7 @@ const SocialLinks = () => {
                             color="white"
                             fontSize="20px"
                         >
-                            Gdańsk, Poland
+                            {t('contactSection.location')}
                         </Text>
                     </Flex>
                 </Box>

@@ -3,10 +3,12 @@ import {
     SiChakraui,
     SiCss,
     SiDocker,
+    SiExpress,
     SiFigma,
     SiFlask,
     SiGit,
     SiGithub,
+    SiGulp,
     SiHtml5,
     SiJavascript,
     SiLinux,
@@ -15,20 +17,19 @@ import {
     SiPython,
     SiReact,
     SiSass,
+    SiSqlite,
     SiTailwindcss,
     SiTypescript,
     SiVite,
 } from '@icons-pack/react-simple-icons';
-import {
-    IconBrandAdobePhotoshop,
-    IconDatabase,
-    IconMilkshake,
-    IconVersions,
-} from '@tabler/icons-react';
+import { IconBrandAdobePhotoshop, IconVersions } from '@tabler/icons-react';
 import React, { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/Heading';
 
 const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
+    const { t } = useTranslation();
+
     return (
         <Container
             maxW="7xl"
@@ -37,7 +38,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
             backgroundImage="url(background.png)"
             ref={ref}
         >
-            <CustomHeading text="My Skills && Stack" />
+            <CustomHeading text={t('skillsSection.heading')} />
 
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                 <SkillCard title="JavaScript">
@@ -88,7 +89,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                         Vite
                     </SkillBadge>
                     <SkillBadge color="pink">
-                        <IconMilkshake stroke={1.5} />
+                        <SiGulp />
                         Gulp
                     </SkillBadge>
                 </SkillCard>
@@ -106,13 +107,13 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                         <SiNodedotjs />
                         Node.js
                     </SkillBadge>
-                    <SkillBadge color="green">
-                        <IconDatabase stroke={1.5} />
-                        SQL
+                    <SkillBadge color="yellow">
+                        <SiExpress />
+                        Express
                     </SkillBadge>
-                    <SkillBadge color="blue">
-                        <SiDocker />
-                        Docker
+                    <SkillBadge color="green">
+                        <SiSqlite />
+                        SQL
                     </SkillBadge>
                 </SkillCard>
 
@@ -128,6 +129,10 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                     <SkillBadge color="teal">
                         <SiNetlify />
                         Netlify
+                    </SkillBadge>
+                    <SkillBadge color="blue">
+                        <SiDocker />
+                        Docker
                     </SkillBadge>
                     <SkillBadge color="gray">
                         <SiGithub />

@@ -10,7 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 const SelectTrigger = () => {
     const select = useSelectContext();
-    const items = select.selectedItems as Framework[];
+    const items = select.selectedItems;
+
     return (
         <IconButton
             variant="outline"
@@ -23,7 +24,14 @@ const SelectTrigger = () => {
 };
 
 const LanguageSelect = () => {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
+
+    const frameworks = createListCollection({
+        items: [
+            { label: t('navbar.languages.en'), value: 'en', icon: '🇬🇧' },
+            { label: t('navbar.languages.pl'), value: 'pl', icon: '🇵🇱' },
+        ],
+    });
 
     return (
         <Select.Root
@@ -55,18 +63,5 @@ const LanguageSelect = () => {
         </Select.Root>
     );
 };
-
-const frameworks = createListCollection({
-    items: [
-        { label: 'English', value: 'en', icon: '🇬🇧' },
-        { label: 'Polish', value: 'pl', icon: '🇵🇱' },
-    ],
-});
-
-interface Framework {
-    label: string;
-    value: string;
-    icon: string;
-}
 
 export default LanguageSelect;

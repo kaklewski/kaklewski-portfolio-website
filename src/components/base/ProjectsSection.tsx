@@ -11,9 +11,12 @@ import {
 } from '@chakra-ui/react';
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/Heading';
 
 const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
+    const { t } = useTranslation();
+
     const projects = [
         {
             image: 'screenshots/kalkdoktor.png',
@@ -56,7 +59,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             name: 'Kaklewski Portfolio Website',
             description:
                 'A modern Front End developer portfolio with a minimalist design. Created to highlight skills, projects, and experience in a clear and professional manner, ensuring viewers have an intuitive and enjoyable browsing experience.',
-            tools: ['React', 'JavaScript', 'Chakra UI', 'Vite'],
+            tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
             demoUrl: 'https://kaklewski.pl',
             codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
         },
@@ -97,7 +100,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             backgroundImage="url(background.png)"
             ref={ref}
         >
-            <CustomHeading text="Featured Projects && Clients" />
+            <CustomHeading text={t('projectsSection.heading')} />
 
             <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
                 {projects.map((project) => (
@@ -176,12 +179,20 @@ const ProjectCard = ({
                 </Card.Body>
                 <Card.Footer>
                     <Button rounded="full" asChild>
-                        <a href={demoUrl} target="_blank">
+                        <a
+                            href={demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <IconExternalLink stroke={1.75} /> Live Demo
                         </a>
                     </Button>
                     <Button variant="surface" rounded="full" asChild>
-                        <a href={codeUrl} target="_blank">
+                        <a
+                            href={codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <IconBrandGithub stroke={1.75} />
                             Source Code
                         </a>

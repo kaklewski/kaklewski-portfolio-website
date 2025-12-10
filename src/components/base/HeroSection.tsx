@@ -14,6 +14,7 @@ import {
     IconBrandLinkedin,
 } from '@tabler/icons-react';
 import { RefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import HeroBgImage from '../../img/hero-background.svg';
 import { scrollToSection } from '../../utils/scrollToSection';
 
@@ -22,6 +23,8 @@ type HeroProps = {
 };
 
 const HeroSection = ({ skillsSectionRef }: HeroProps) => {
+    const { t } = useTranslation();
+
     return (
         <Flex
             position="relative"
@@ -56,7 +59,7 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
                         fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
                         lineHeight="110%"
                     >
-                        {'Hello! myName = '}
+                        {`${t('heroSection.greeting')} myName = `}
                         <Text as="span" color="teal.400">
                             Oskar
                         </Text>
@@ -85,8 +88,7 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
                             marginInline="auto"
                             fontSize={{ base: 'sm', sm: 'md', md: 'lg' }}
                         >
-                            I'm a Front-End Developer who builds fast, modern,
-                            and great looking web apps.
+                            {t('heroSection.tagline')}
                         </Text>
                     </Box>
                     <Stack direction="row" align="center" alignSelf="center">
@@ -97,7 +99,11 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
                             size="xl"
                             asChild
                         >
-                            <a href="https://github.com/kaklewski/">
+                            <a
+                                href="https://github.com/kaklewski/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <IconBrandGithub stroke={1.75} /> GitHub
                             </a>
                         </Button>
@@ -108,7 +114,11 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
                             size="xl"
                             asChild
                         >
-                            <a href="https://www.linkedin.com/in/oskar-kaklewski/">
+                            <a
+                                href="https://www.linkedin.com/in/oskar-kaklewski/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <IconBrandLinkedin stroke={1.75} /> LinkedIn
                             </a>
                         </Button>

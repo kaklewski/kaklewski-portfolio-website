@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { RefObject, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { scrollToSection } from '../../utils/scrollToSection';
 import LanguageSelect from '../elements/LanguageSelect';
 import {
@@ -33,10 +34,12 @@ type SectionKey = keyof NavbarProps['sections'];
 const Navbar = ({ sections }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const { t } = useTranslation();
+
     const links: { name: string; key: SectionKey }[] = [
-        { name: 'Skills', key: 'skills' },
-        { name: 'Projects', key: 'projects' },
-        { name: 'Contact', key: 'contact' },
+        { name: t('navbar.buttons.skills'), key: 'skills' },
+        { name: t('navbar.buttons.projects'), key: 'projects' },
+        { name: t('navbar.buttons.contact'), key: 'contact' },
     ];
 
     return (
