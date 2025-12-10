@@ -9,6 +9,7 @@ import {
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { RefObject, useState } from 'react';
 import { scrollToSection } from '../../utils/scrollToSection';
+import LanguageSelect from '../elements/LanguageSelect';
 import {
     DrawerBackdrop,
     DrawerBody,
@@ -62,82 +63,89 @@ const Navbar = ({ sections }: NavbarProps) => {
                         </Text>
                     </Button>
 
-                    <Box display={{ base: 'none', sm: 'inline-block' }}>
-                        <Flex gap={6}>
-                            {links.map((link) => (
-                                <NavLinkButton
-                                    key={link.name}
-                                    type="navbar"
-                                    name={link.name}
-                                    handleClick={() => {
-                                        scrollToSection(sections[link.key]);
-                                    }}
-                                />
-                            ))}
-                        </Flex>
-                    </Box>
-
-                    <DrawerRoot
-                        open={isMenuOpen}
-                        onOpenChange={(e) => setIsMenuOpen(e.open)}
-                    >
-                        <DrawerBackdrop />
-                        <DrawerTrigger asChild display={{ sm: 'none' }}>
-                            <IconButton
-                                aria-label="Open Menu"
-                                variant="outline"
-                                display="flex"
-                            >
-                                <IconMenu2 stroke={1.75} />
-                            </IconButton>
-                        </DrawerTrigger>
-                        <DrawerContent
-                            position="relative"
-                            zIndex="tooltip"
-                            color="white"
-                            backgroundColor="rgba(9,9,11,.9)"
-                            backdropFilter="blur(13px) saturate(130%)"
-                            shadow="none"
-                            borderLeftWidth="1px"
-                            borderLeftColor={'gray.900'}
-                        >
-                            <DrawerHeader>
-                                <button
-                                    type="button"
-                                    aria-label="Close Menu"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    <IconX stroke={1.75} />
-                                </button>
-                            </DrawerHeader>
-                            <DrawerBody>
-                                <Flex
-                                    direction="column"
-                                    justifyContent="center"
-                                    alignItems="start"
-                                    gap={35}
-                                    height="100%"
-                                    pl={4}
-                                    pb={100}
-                                >
+                    <Flex gap={2}>
+                        <Flex gap={2} align="center">
+                            <Box display={{ base: 'none', sm: 'inline-block' }}>
+                                <Flex align="center">
                                     {links.map((link) => (
                                         <NavLinkButton
                                             key={link.name}
-                                            type="menu"
+                                            type="navbar"
                                             name={link.name}
                                             handleClick={() => {
-                                                setIsMenuOpen(false);
                                                 scrollToSection(
                                                     sections[link.key],
-                                                    50,
                                                 );
                                             }}
                                         />
                                     ))}
                                 </Flex>
-                            </DrawerBody>
-                        </DrawerContent>
-                    </DrawerRoot>
+                            </Box>
+                            <LanguageSelect />
+                        </Flex>
+
+                        <DrawerRoot
+                            open={isMenuOpen}
+                            onOpenChange={(e) => setIsMenuOpen(e.open)}
+                        >
+                            <DrawerBackdrop />
+                            <DrawerTrigger asChild display={{ sm: 'none' }}>
+                                <IconButton
+                                    aria-label="Open Menu"
+                                    variant="outline"
+                                    display="flex"
+                                >
+                                    <IconMenu2 stroke={1.75} />
+                                </IconButton>
+                            </DrawerTrigger>
+                            <DrawerContent
+                                position="relative"
+                                zIndex="tooltip"
+                                color="white"
+                                backgroundColor="rgba(9,9,11,.9)"
+                                backdropFilter="blur(13px) saturate(130%)"
+                                shadow="none"
+                                borderLeftWidth="1px"
+                                borderLeftColor={'gray.900'}
+                            >
+                                <DrawerHeader>
+                                    <button
+                                        type="button"
+                                        aria-label="Close Menu"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        <IconX stroke={1.75} />
+                                    </button>
+                                </DrawerHeader>
+                                <DrawerBody>
+                                    <Flex
+                                        direction="column"
+                                        justifyContent="center"
+                                        alignItems="start"
+                                        gap={35}
+                                        height="100%"
+                                        pl={4}
+                                        pb={100}
+                                    >
+                                        {links.map((link) => (
+                                            <NavLinkButton
+                                                key={link.name}
+                                                type="menu"
+                                                name={link.name}
+                                                handleClick={() => {
+                                                    setIsMenuOpen(false);
+                                                    scrollToSection(
+                                                        sections[link.key],
+                                                        50,
+                                                    );
+                                                }}
+                                            />
+                                        ))}
+                                    </Flex>
+                                </DrawerBody>
+                            </DrawerContent>
+                        </DrawerRoot>
+                    </Flex>
                 </Flex>
             </Container>
         </Box>
@@ -152,10 +160,9 @@ type NavLinkButtonProps = {
 
 const NavLinkButton = ({ type, name, handleClick }: NavLinkButtonProps) => (
     <Button
-        variant="plain"
-        p={0}
+        variant="ghost"
         fontSize={type === 'menu' ? 40 : undefined}
-        size={type === 'navbar' ? 'xl' : 'md'}
+        size={type === 'navbar' ? 'lg' : 'md'}
         color="#FAFAFA"
         onClick={handleClick}
     >
