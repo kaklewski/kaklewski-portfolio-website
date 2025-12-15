@@ -1,6 +1,5 @@
 import { Badge, Card, Container, Flex, SimpleGrid } from '@chakra-ui/react';
 import {
-    SiChakraui,
     SiCss,
     SiDocker,
     SiExpress,
@@ -17,7 +16,9 @@ import {
     SiPython,
     SiReact,
     SiSass,
+    SiSolid,
     SiSqlite,
+    SiSvelte,
     SiTailwindcss,
     SiTypescript,
     SiVite,
@@ -42,10 +43,6 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
 
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                 <SkillCard title="JavaScript">
-                    <SkillBadge color="cyan">
-                        <SiReact />
-                        React
-                    </SkillBadge>
                     <SkillBadge color="blue">
                         <SiTypescript />
                         TypeScript
@@ -54,9 +51,17 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                         <SiJavascript />
                         JavaScript
                     </SkillBadge>
-                    <SkillBadge color="teal">
-                        <SiChakraui />
-                        Chakra UI
+                    <SkillBadge color="cyan">
+                        <SiReact />
+                        React
+                    </SkillBadge>
+                    <SkillBadge color="blue">
+                        <SiSolid />
+                        Solid
+                    </SkillBadge>
+                    <SkillBadge color="orange">
+                        <SiSvelte />
+                        Svelte
                     </SkillBadge>
                 </SkillCard>
 
@@ -95,14 +100,6 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 </SkillCard>
 
                 <SkillCard title="Back End">
-                    <SkillBadge color="blue">
-                        <SiPython />
-                        Python
-                    </SkillBadge>
-                    <SkillBadge color="gray">
-                        <SiFlask />
-                        Flask
-                    </SkillBadge>
                     <SkillBadge color="red">
                         <SiNodedotjs />
                         Node.js
@@ -110,6 +107,14 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                     <SkillBadge color="yellow">
                         <SiExpress />
                         Express
+                    </SkillBadge>
+                    <SkillBadge color="blue">
+                        <SiPython />
+                        Python
+                    </SkillBadge>
+                    <SkillBadge color="gray">
+                        <SiFlask />
+                        Flask
                     </SkillBadge>
                     <SkillBadge color="green">
                         <SiSqlite />
@@ -126,13 +131,13 @@ const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
                         <SiLinux />
                         Linux
                     </SkillBadge>
-                    <SkillBadge color="teal">
-                        <SiNetlify />
-                        Netlify
-                    </SkillBadge>
                     <SkillBadge color="blue">
                         <SiDocker />
                         Docker
+                    </SkillBadge>
+                    <SkillBadge color="teal">
+                        <SiNetlify />
+                        Netlify
                     </SkillBadge>
                     <SkillBadge color="gray">
                         <SiGithub />
