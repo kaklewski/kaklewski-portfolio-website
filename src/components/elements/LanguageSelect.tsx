@@ -8,21 +8,6 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
-const SelectTrigger = () => {
-    const select = useSelectContext();
-    const items = select.selectedItems;
-
-    return (
-        <IconButton
-            variant="outline"
-            {...select.getTriggerProps()}
-            size={{ base: 'md', md: 'lg' }}
-        >
-            {items[0].icon}
-        </IconButton>
-    );
-};
-
 const LanguageSelect = () => {
     const { i18n, t } = useTranslation();
 
@@ -61,6 +46,23 @@ const LanguageSelect = () => {
                 </Select.Positioner>
             </Portal>
         </Select.Root>
+    );
+};
+
+const SelectTrigger = () => {
+    const select = useSelectContext();
+    const items = select.selectedItems;
+
+    const icon = items[0]?.icon || '🌐';
+
+    return (
+        <IconButton
+            variant="outline"
+            {...select.getTriggerProps()}
+            size={{ base: 'md', md: 'lg' }}
+        >
+            {icon}
+        </IconButton>
     );
 };
 

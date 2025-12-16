@@ -108,10 +108,13 @@ i18n.use(LanguageDetector)
     .init({
         resources,
         fallbackLng: 'en',
+        load: 'languageOnly',
+        nonExplicitSupportedLngs: true,
         detection: {
             order: ['localStorage', 'navigator'],
             caches: ['localStorage'],
             lookupQuerystring: 'lng',
+            convertDetectedLanguage: (lng) => lng.split('-')[0],
         },
         interpolation: {
             escapeValue: false,
