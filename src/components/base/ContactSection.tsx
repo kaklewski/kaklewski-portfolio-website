@@ -56,7 +56,7 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
                 });
             }
         },
-        [],
+        [t],
     );
 
     return (
