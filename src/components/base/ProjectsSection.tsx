@@ -5,33 +5,82 @@ import {
     Card,
     Container,
     Flex,
+    Heading,
     HStack,
     Image,
     SimpleGrid,
 } from '@chakra-ui/react';
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
-import { forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/Heading';
 
 const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const { t } = useTranslation();
 
-    const projects = [
+    const personalProjects = [
         {
             image: 'screenshots/kalkdoktor.png',
             name: 'Kalkdoktor',
             description:
-                'This is a web application designed as a toolkit for doctors, featuring a collection of medical calculators and scales that assist in diagnosing patients and selecting appropriate treatments. The app works fully offline and allows users to save their favorite calculators.',
+                'Web application designed as a toolkit for medical professionals. The project focuses on implementing a collection of medical calculators and scales, offline-first functionality using PWA features, and persistent favorites to support quick access in clinical use.',
             tools: ['React', 'TypeScript', 'Chakra UI', 'Vite', 'PWA'],
             demoUrl: 'https://kalkdoktor.pl',
             codeUrl: 'https://github.com/kaklewski/kalkdoktor',
         },
         {
+            image: 'screenshots/lingva.png',
+            name: 'Lingva Translate in Sidebar',
+            description:
+                'Browser extension that integrates Lingva Translate directly into the sidebar. The project focuses on leveraging the WebExtensions API, integrating an external translation API, and delivering a fast, unobtrusive user experience for translating text without leaving the current page.',
+            tools: ['JavaScript', 'HTML5', 'WebExtensions API', 'Lingva API'],
+            demoUrl:
+                'https://addons.mozilla.org/firefox/addon/lingva-in-sidebar',
+            codeUrl: 'https://github.com/kaklewski/lingva-sidebar',
+        },
+        {
+            image: 'screenshots/amnesia.png',
+            name: 'Amnesia - History Cleaner',
+            description:
+                'Privacy-focused browser extension for automatic cleanup of browsing history. The project focuses on using browser APIs to manage history data, implementing time-based cleanup logic, and providing a lightweight, configurable solution for users who value privacy.',
+            tools: ['JavaScript', 'HTML5', 'WebExtensions API'],
+            demoUrl:
+                'https://addons.mozilla.org/firefox/addon/amnesia-cleaner/',
+            codeUrl: 'https://github.com/kaklewski/amnesia',
+        },
+        {
+            image: 'screenshots/portfolio.png',
+            name: 'My Portfolio Website',
+            description:
+                'Personal front-end portfolio website built to showcase projects and experience. The project focuses on a clean, minimalist UI, reusable layout components, responsive design, and performance optimization to deliver a clear and professional presentation.',
+            tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
+            demoUrl: 'https://kaklewski.pl',
+            codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
+        },
+    ];
+
+    const technicalDemos = [
+        {
+            image: 'screenshots/react-pokedex.png',
+            name: 'React Pokédex',
+            description:
+                'Client-side application built as a sandbox for experimenting with modern React libraries. The project focuses on data fetching and state management using the PokéAPI, enabling users to browse Pokémon, view detailed information, and manage a favorites list.',
+            tools: [
+                'React',
+                'TypeScript',
+                'Mantine UI',
+                'TanStack libraries',
+                'Vite',
+                'PokéAPI',
+            ],
+            demoUrl: 'https://react-pokedex-2.netlify.app',
+            codeUrl: 'https://github.com/kaklewski/react-pokedex',
+        },
+        {
             image: 'screenshots/zenith-calendar.png',
             name: 'Zenith Calendar',
             description:
-                "A web application inspired by Google Docs that enables users to add and manage events in a modern and convenient way. Events are stored in the browser's local storage. The app also allows users to customize their preferred theme and the starting day of the week.",
+                'Calendar web application for managing events with a clean and modern interface. The project focuses on state management, persistent data storage using browser local storage, and customizable user preferences such as theme selection and week start day.',
             tools: ['React', 'TypeScript', 'SASS', 'Vite'],
             demoUrl: 'https://zenith-calendar.netlify.app',
             codeUrl: 'https://github.com/kaklewski/zenith-calendar',
@@ -40,43 +89,27 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             image: 'screenshots/zenith-docs.png',
             name: 'Zenith Docs',
             description:
-                'A web application inspired by Google Docs that offers advanced text editing and real-time collaboration between multiple users. Content is automatically saved and synchronized using Google Firebase.',
+                'Document editing web application inspired by Google Docs. The project focuses on real-time collaboration, advanced text editing, and automatic content synchronization using Firebase, enabling multiple users to work on the same document simultaneously.',
             tools: ['React', 'TypeScript', 'SASS', 'Firebase', 'Vite'],
             demoUrl: 'https://zenith-docs.netlify.app/',
             codeUrl: 'https://github.com/kaklewski/zenith-docs',
         },
+    ];
+
+    const commercialProjects = [
         {
-            image: 'screenshots/pokedex.png',
-            name: 'Pokédex',
+            image: 'screenshots/mirek-handlarz.png',
+            name: 'MirekHandlarz.pl',
             description:
-                'Pokédex is a project that utilizes the PokéAPI, allowing users to search through the first-generation Pokémon list and view detailed information and images for each Pokémon.',
-            tools: ['React', 'JavaScript', 'SASS', 'Vite'],
-            demoUrl: 'https://kaklewski.github.io/pokemon-search',
-            codeUrl: 'https://github.com/kaklewski/pokemon-search',
-        },
-        {
-            image: 'screenshots/portfolio.png',
-            name: 'Kaklewski Portfolio Website',
-            description:
-                'A modern Front End developer portfolio with a minimalist design. Created to highlight skills, projects, and experience in a clear and professional manner, ensuring viewers have an intuitive and enjoyable browsing experience.',
-            tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
-            demoUrl: 'https://kaklewski.pl',
-            codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
-        },
-        {
-            image: 'screenshots/gymnormous.png',
-            name: 'GYMnormous',
-            description:
-                'A modern fitness application designed for workout enthusiasts. It allows users to create a personalized workout plan based on selected parameters such as workout type, targeted muscle groups, and fitness goals.',
-            tools: ['React', 'JavaScript', 'Tailwind CSS', 'Vite'],
-            demoUrl: 'https://kaklewski.github.io/gymnormous',
-            codeUrl: 'https://github.com/kaklewski/gymnormous',
+                'Front-end of a modern automotive classifieds platform. Focused on building reusable UI components, integrating REST APIs, implementing offer filtering and listing logic, and optimizing application performance for fast load times and smooth interaction with large datasets.',
+            tools: ['TypeScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
+            demoUrl: 'https://mirekhandlarz.pl',
         },
         {
             image: 'screenshots/projekty-wnetrz.png',
             name: 'Projekty Wnętrz',
             description:
-                'A portfolio website for an interior designer, created for one of my clients. The website follows a minimalist design, aiming to showcase projects and pricing in an appealing way. It is fully responsive and adapts to all devices.',
+                'Portfolio website for an interior designer. Focused on implementing a minimalist, content-driven UI, creating reusable layout components, and ensuring a fully responsive design to clearly present projects and offer across devices.',
             tools: ['JavaScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
             demoUrl: 'https://projektywnetrz.net',
             codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
@@ -85,7 +118,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             image: 'screenshots/stomatolog-piasecki.png',
             name: 'Stomatolog Piasecki',
             description:
-                'A website for a dental clinic, created for one of my clients. It is a fully responsive and modern-looking website that adjusts seamlessly to all devices.',
+                'Website for a dental clinic. Focused on usability and accessibility, with an emphasis on intuitive navigation, responsive layout, semantic HTML, and cross-device compatibility to provide a consistent and user-friendly experience.',
             tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp', 'RWD'],
             demoUrl: 'https://stomatologpiasecki.pl',
             codeUrl: 'https://github.com/kaklewski/stomatolog-piasecki',
@@ -102,8 +135,8 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         >
             <CustomHeading text={t('projectsSection.heading')} />
 
-            <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-                {projects.map((project) => (
+            <ProjectGrid headingText={'Personal Projects'}>
+                {personalProjects.map((project) => (
                     <ProjectCard
                         key={project.name}
                         image={project.image}
@@ -114,10 +147,62 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                         codeUrl={project.codeUrl}
                     />
                 ))}
-            </SimpleGrid>
+            </ProjectGrid>
+
+            <ProjectGrid headingText={'Technical Demos'}>
+                {technicalDemos.map((project) => (
+                    <ProjectCard
+                        key={project.name}
+                        image={project.image}
+                        name={project.name}
+                        description={project.description}
+                        tools={project.tools}
+                        demoUrl={project.demoUrl}
+                        codeUrl={project.codeUrl}
+                    />
+                ))}
+            </ProjectGrid>
+
+            <ProjectGrid headingText={'Commercial Projects'}>
+                {commercialProjects.map((project) => (
+                    <ProjectCard
+                        key={project.name}
+                        image={project.image}
+                        name={project.name}
+                        description={project.description}
+                        tools={project.tools}
+                        demoUrl={project.demoUrl}
+                        codeUrl={project.codeUrl}
+                    />
+                ))}
+            </ProjectGrid>
         </Container>
     );
 });
+
+type ProjectGridProps = {
+    headingText: string;
+    children: ReactNode;
+};
+
+const ProjectGrid = ({ headingText, children }: ProjectGridProps) => {
+    return (
+        <>
+            <Heading
+                as="h3"
+                size={{ base: 'xl', sm: '2xl', md: '3xl' }}
+                className="accent-font"
+                pb={4}
+                pt={12}
+            >
+                {headingText}
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} pb={8}>
+                {children}
+            </SimpleGrid>
+        </>
+    );
+};
 
 type ProjectCardProps = {
     image: string;
@@ -125,7 +210,7 @@ type ProjectCardProps = {
     description: string;
     tools: string[];
     demoUrl: string;
-    codeUrl: string;
+    codeUrl?: string;
 };
 
 const ProjectCard = ({
@@ -187,16 +272,18 @@ const ProjectCard = ({
                             <IconExternalLink stroke={1.75} /> Live Demo
                         </a>
                     </Button>
-                    <Button variant="surface" rounded="full" asChild>
-                        <a
-                            href={codeUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <IconBrandGithub stroke={1.75} />
-                            Source Code
-                        </a>
-                    </Button>
+                    {codeUrl && (
+                        <Button variant="surface" rounded="full" asChild>
+                            <a
+                                href={codeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <IconBrandGithub stroke={1.75} />
+                                Source Code
+                            </a>
+                        </Button>
+                    )}
                 </Card.Footer>
             </Flex>
         </Card.Root>
