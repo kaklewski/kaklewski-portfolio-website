@@ -244,7 +244,7 @@ const ProjectCard = ({
                 flexGrow="2"
             >
                 <Card.Body display="flex" flexDir="column" flexGrow="2">
-                    <Card.Title mb="2" fontSize="xl">
+                    <Card.Title mb="2" fontSize="xl" className="accent-font">
                         {name}
                     </Card.Title>
                     <Card.Description flexGrow="2">

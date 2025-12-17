@@ -55,9 +55,11 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
             <Container maxW="3xl" id="about">
                 <Stack textAlign="center" py={{ base: 20, md: 36 }} gap={6}>
                     <Heading
+                        as="h2"
                         fontWeight={600}
                         fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
                         lineHeight="110%"
+                        className="accent-font"
                     >
                         {`${t('heroSection.greeting')} myName = `}
                         <Text as="span" color="teal.400">

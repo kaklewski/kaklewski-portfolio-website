@@ -61,7 +61,12 @@ const Navbar = ({ sections }: NavbarProps) => {
                         p={0}
                         onClick={() => scrollToSection(sections.main)}
                     >
-                        <Text as="h1" fontSize="2xl" fontWeight="bold">
+                        <Text
+                            as="h1"
+                            fontSize="2xl"
+                            fontWeight="bold"
+                            className="accent-font"
+                        >
                             Oskar Kąklewski
                         </Text>
                     </Button>
