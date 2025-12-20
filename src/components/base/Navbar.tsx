@@ -59,16 +59,9 @@ const Navbar = ({ sections }: NavbarProps) => {
                     <Button
                         variant="plain"
                         p={0}
-                        onClick={() => scrollToSection(sections.main)}
+                        onClick={() => scrollToSection(sections.main, 80)}
                     >
-                        <Text
-                            as="h1"
-                            fontSize="2xl"
-                            fontWeight="bold"
-                            className="accent-font"
-                        >
-                            Oskar Kąklewski
-                        </Text>
+                        <NavLogo />
                     </Button>
 
                     <Flex gap={2}>
@@ -157,6 +150,21 @@ const Navbar = ({ sections }: NavbarProps) => {
                 </Flex>
             </Container>
         </Box>
+    );
+};
+
+const NavLogo = () => {
+    return (
+        <Text
+            as="h1"
+            fontSize="2xl"
+            fontWeight="bold"
+            className="accent-font"
+            style={{ transition: 'color 0.2s' }}
+            _hover={{ color: 'teal.400' }}
+        >
+            Oskar Kąklewski
+        </Text>
     );
 };
 
