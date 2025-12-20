@@ -21,18 +21,18 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const personalProjects = [
         {
             image: 'screenshots/kalkdoktor.png',
-            name: 'Kalkdoktor',
-            description:
-                'Web application designed as a toolkit for medical professionals. The project focuses on implementing a collection of medical calculators and scales, offline-first functionality using PWA features, and persistent favorites to support quick access in clinical use.',
+            name: t('projectsSection.projects.kalkdoktor.name'),
+            description: t('projectsSection.projects.kalkdoktor.description'),
             tools: ['React', 'TypeScript', 'Chakra UI', 'Vite', 'PWA'],
             demoUrl: 'https://kalkdoktor.pl',
             codeUrl: 'https://github.com/kaklewski/kalkdoktor',
         },
         {
             image: 'screenshots/lingva.png',
-            name: 'Lingva Translate in Sidebar',
-            description:
-                'Browser extension that integrates Lingva Translate directly into the sidebar. The project focuses on leveraging the WebExtensions API, integrating an external translation API, and delivering a fast, unobtrusive user experience for translating text without leaving the current page.',
+            name: t('projectsSection.projects.lingvaSidebar.name'),
+            description: t(
+                'projectsSection.projects.lingvaSidebar.description',
+            ),
             tools: ['JavaScript', 'HTML5', 'WebExtensions API', 'Lingva API'],
             demoUrl:
                 'https://addons.mozilla.org/firefox/addon/lingva-in-sidebar',
@@ -40,9 +40,8 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         },
         {
             image: 'screenshots/amnesia.png',
-            name: 'Amnesia - History Cleaner',
-            description:
-                'Privacy-focused browser extension for automatic cleanup of browsing history. The project focuses on using browser APIs to manage history data, implementing time-based cleanup logic, and providing a lightweight, configurable solution for users who value privacy.',
+            name: t('projectsSection.projects.amnesia.name'),
+            description: t('projectsSection.projects.amnesia.description'),
             tools: ['JavaScript', 'HTML5', 'WebExtensions API'],
             demoUrl:
                 'https://addons.mozilla.org/firefox/addon/amnesia-cleaner/',
@@ -50,9 +49,8 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         },
         {
             image: 'screenshots/portfolio.png',
-            name: 'My Portfolio Website',
-            description:
-                'Personal front-end portfolio website built to showcase projects and experience. The project focuses on a clean, minimalist UI, reusable layout components, responsive design, and performance optimization to deliver a clear and professional presentation.',
+            name: t('projectsSection.projects.portfolio.name'),
+            description: t('projectsSection.projects.portfolio.description'),
             tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
             demoUrl: 'https://kaklewski.pl',
             codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
@@ -62,9 +60,8 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const technicalDemos = [
         {
             image: 'screenshots/react-pokedex.png',
-            name: 'React Pokédex',
-            description:
-                'Client-side application built as a sandbox for experimenting with modern React libraries. The project focuses on data fetching and state management using the PokéAPI, enabling users to browse Pokémon, view detailed information, and manage a favorites list.',
+            name: t('projectsSection.projects.reactPokedex.name'),
+            description: t('projectsSection.projects.reactPokedex.description'),
             tools: [
                 'React',
                 'TypeScript',
@@ -78,18 +75,18 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         },
         {
             image: 'screenshots/zenith-calendar.png',
-            name: 'Zenith Calendar',
-            description:
-                'Calendar web application for managing events with a clean and modern interface. The project focuses on state management, persistent data storage using browser local storage, and customizable user preferences such as theme selection and week start day.',
+            name: t('projectsSection.projects.zenithCalendar.name'),
+            description: t(
+                'projectsSection.projects.zenithCalendar.description',
+            ),
             tools: ['React', 'TypeScript', 'SASS', 'Vite'],
             demoUrl: 'https://zenith-calendar.netlify.app',
             codeUrl: 'https://github.com/kaklewski/zenith-calendar',
         },
         {
             image: 'screenshots/zenith-docs.png',
-            name: 'Zenith Docs',
-            description:
-                'Document editing web application inspired by Google Docs. The project focuses on real-time collaboration, advanced text editing, and automatic content synchronization using Firebase, enabling multiple users to work on the same document simultaneously.',
+            name: t('projectsSection.projects.zenithDocs.name'),
+            description: t('projectsSection.projects.zenithDocs.description'),
             tools: ['React', 'TypeScript', 'SASS', 'Firebase', 'Vite'],
             demoUrl: 'https://zenith-docs.netlify.app/',
             codeUrl: 'https://github.com/kaklewski/zenith-docs',
@@ -99,26 +96,29 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const commercialProjects = [
         {
             image: 'screenshots/mirek-handlarz.png',
-            name: 'MirekHandlarz.pl',
-            description:
-                'Front-end of a modern automotive classifieds platform. Focused on building reusable UI components, integrating REST APIs, implementing offer filtering and listing logic, and optimizing application performance for fast load times and smooth interaction with large datasets.',
+            name: t('projectsSection.projects.mirekHandlarz.name'),
+            description: t(
+                'projectsSection.projects.mirekHandlarz.description',
+            ),
             tools: ['TypeScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
             demoUrl: 'https://mirekhandlarz.pl',
         },
         {
             image: 'screenshots/projekty-wnetrz.png',
-            name: 'Projekty Wnętrz',
-            description:
-                'Portfolio website for an interior designer. Focused on implementing a minimalist, content-driven UI, creating reusable layout components, and ensuring a fully responsive design to clearly present projects and offer across devices.',
+            name: t('projectsSection.projects.projektyWnetrz.name'),
+            description: t(
+                'projectsSection.projects.projektyWnetrz.description',
+            ),
             tools: ['JavaScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
             demoUrl: 'https://projektywnetrz.net',
             codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
         },
         {
             image: 'screenshots/stomatolog-piasecki.png',
-            name: 'Stomatolog Piasecki',
-            description:
-                'Website for a dental clinic. Focused on usability and accessibility, with an emphasis on intuitive navigation, responsive layout, semantic HTML, and cross-device compatibility to provide a consistent and user-friendly experience.',
+            name: t('projectsSection.projects.stomatologPiasecki.name'),
+            description: t(
+                'projectsSection.projects.stomatologPiasecki.description',
+            ),
             tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp', 'RWD'],
             demoUrl: 'https://stomatologpiasecki.pl',
             codeUrl: 'https://github.com/kaklewski/stomatolog-piasecki',
@@ -135,7 +135,9 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         >
             <CustomHeading text={t('projectsSection.heading')} />
 
-            <ProjectGrid headingText={'Personal Projects'}>
+            <ProjectGrid
+                headingText={t('projectsSection.sections.personalProjects')}
+            >
                 {personalProjects.map((project) => (
                     <ProjectCard
                         key={project.name}
@@ -149,7 +151,9 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 ))}
             </ProjectGrid>
 
-            <ProjectGrid headingText={'Technical Demos'}>
+            <ProjectGrid
+                headingText={t('projectsSection.sections.technicalDemos')}
+            >
                 {technicalDemos.map((project) => (
                     <ProjectCard
                         key={project.name}
@@ -163,7 +167,9 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 ))}
             </ProjectGrid>
 
-            <ProjectGrid headingText={'Commercial Projects'}>
+            <ProjectGrid
+                headingText={t('projectsSection.sections.commercialProjects')}
+            >
                 {commercialProjects.map((project) => (
                     <ProjectCard
                         key={project.name}
@@ -221,6 +227,8 @@ const ProjectCard = ({
     demoUrl,
     codeUrl,
 }: ProjectCardProps) => {
+    const { t } = useTranslation();
+
     return (
         <Card.Root
             overflow="hidden"
@@ -269,7 +277,8 @@ const ProjectCard = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <IconExternalLink stroke={1.75} /> Live Demo
+                            <IconExternalLink stroke={1.75} />{' '}
+                            {t('projectsSection.buttons.viewProject')}
                         </a>
                     </Button>
                     {codeUrl && (
@@ -280,7 +289,7 @@ const ProjectCard = ({
                                 rel="noopener noreferrer"
                             >
                                 <IconBrandGithub stroke={1.75} />
-                                Source Code
+                                {t('projectsSection.buttons.viewCode')}
                             </a>
                         </Button>
                     )}
