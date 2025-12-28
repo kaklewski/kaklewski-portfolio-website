@@ -3,6 +3,7 @@ import {
     IconButton,
     Portal,
     Select,
+    Theme,
     createListCollection,
     useSelectContext,
 } from '@chakra-ui/react';
@@ -32,18 +33,23 @@ const LanguageSelect = () => {
                 <SelectTrigger />
             </Select.Control>
             <Portal>
-                <Select.Positioner>
-                    <Select.Content minW="32">
-                        {frameworks.items.map((framework) => (
-                            <Select.Item item={framework} key={framework.value}>
-                                <HStack>
-                                    {framework.icon} {framework.label}
-                                </HStack>
-                                <Select.ItemIndicator />
-                            </Select.Item>
-                        ))}
-                    </Select.Content>
-                </Select.Positioner>
+                <Theme appearance="dark">
+                    <Select.Positioner>
+                        <Select.Content minW="32">
+                            {frameworks.items.map((framework) => (
+                                <Select.Item
+                                    item={framework}
+                                    key={framework.value}
+                                >
+                                    <HStack>
+                                        {framework.icon} {framework.label}
+                                    </HStack>
+                                    <Select.ItemIndicator />
+                                </Select.Item>
+                            ))}
+                        </Select.Content>
+                    </Select.Positioner>
+                </Theme>
             </Portal>
         </Select.Root>
     );
