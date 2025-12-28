@@ -61,7 +61,7 @@ const HeroSection = ({ skillsSectionRef }: HeroProps) => {
                         lineHeight="110%"
                         className="accent-font"
                     >
-                        {`${t('heroSection.greeting')} myName = `}
+                        {`${t('heroSection.greeting')} `}
                         <Text as="span" color="teal.400">
                             Oskar
                         </Text>

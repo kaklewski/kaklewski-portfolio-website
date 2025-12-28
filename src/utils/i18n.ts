@@ -17,7 +17,7 @@ const resources = {
                 },
             },
             heroSection: {
-                greeting: 'Hello!',
+                greeting: 'Hello! myName =',
                 tagline:
                     "I'm a Web Developer who builds fast, modern, and great looking web apps.",
             },
@@ -50,7 +50,7 @@ const resources = {
                     portfolio: {
                         name: 'My Portfolio Website',
                         description:
-                            'Personal front-end portfolio website built to showcase projects and experience. The project focuses on a clean, minimalist UI, reusable layout components, responsive design, and performance optimization to deliver a clear and professional presentation.',
+                            'Personal web dev portfolio website built to showcase projects and experience. The project focuses on a clean, minimalist UI, reusable layout components, responsive design, and performance optimization to deliver a clear and professional presentation.',
                     },
                     reactPokedex: {
                         name: 'React Pokédex',
@@ -127,15 +127,15 @@ const resources = {
                 },
             },
             heroSection: {
-                greeting: 'Cześć!',
+                greeting: 'Cześć! Jestem',
                 tagline:
                     'Jestem Web Developerem, który tworzy szybkie, nowoczesne i świetnie wyglądające aplikacje internetowe.',
             },
             skillsSection: {
-                heading: 'Technologie && Umiejętności',
+                heading: 'Technologie i umiejętności',
             },
             projectsSection: {
-                heading: 'Wybrane projekty && Klienci',
+                heading: 'Wybrane projekty',
                 sections: {
                     personalProjects: 'Projekty osobiste',
                     technicalDemos: 'Dema technologiczne',
@@ -145,52 +145,52 @@ const resources = {
                     kalkdoktor: {
                         name: 'Kalkdoktor',
                         description:
-                            'Aplikacja webowa zaprojektowana jako zestaw narzędzi dla profesjonalistów medycznych. Projekt koncentruje się na implementacji kolekcji kalkulatorów i skal medycznych, funkcjonalności offline-first z wykorzystaniem możliwości PWA oraz trwałych ulubionych, umożliwiających szybki dostęp w codziennej pracy klinicznej.',
+                            'Aplikacja webowa będąca zestawem narzędzi dla lekarzy. Projekt obejmuje implementację kalkulatorów i skal medycznych, funkcjonalność offline-first opartą o PWA oraz system ulubionych, który ułatwia szybki dostęp do najczęściej używanych narzędzi w codziennej pracy klinicznej.',
                     },
                     lingvaSidebar: {
                         name: 'Lingva Translate in Sidebar',
                         description:
-                            'Rozszerzenie przeglądarki integrujące Lingva Translate bezpośrednio w panelu bocznym. Projekt koncentruje się na wykorzystaniu WebExtensions API, integracji z zewnętrznym API tłumaczeń oraz zapewnieniu szybkiego i nienachalnego doświadczenia użytkownika, pozwalającego tłumaczyć tekst bez opuszczania aktualnej strony.',
+                            'Rozszerzenie przeglądarki integrujące Lingva Translate bezpośrednio w panelu bocznym. Projekt wykorzystuje WebExtensions API oraz zewnętrzne API tłumaczeń, zapewniając szybkie i wygodne tłumaczenie tekstu bez konieczności opuszczania aktualnie przeglądanej strony.',
                     },
                     amnesia: {
                         name: 'Amnesia - History Cleaner',
                         description:
-                            'Rozszerzenie przeglądarki skoncentrowane na prywatności, służące do automatycznego czyszczenia historii przeglądania. Projekt skupia się na wykorzystaniu API przeglądarki do zarządzania danymi historii, implementacji logiki czyszczenia opartej na czasie oraz dostarczeniu lekkiego i konfigurowalnego rozwiązania dla użytkowników ceniących prywatność.',
+                            'Rozszerzenie przeglądarki nastawione na ochronę prywatności, umożliwiające automatyczne czyszczenie historii przeglądania. Projekt wykorzystuje API przeglądarki do zarządzania danymi historii, mechanizm czyszczenia oparty o czas oraz prostą konfigurację dla użytkowników ceniących prywatność.',
                     },
                     portfolio: {
                         name: 'Moje Portfolio',
                         description:
-                            'Osobista strona portfolio front-endowego, stworzona w celu prezentacji projektów i doświadczenia. Projekt koncentruje się na czystym, minimalistycznym interfejsie, wielokrotnego użytku komponentach layoutu, responsywnym designie oraz optymalizacji wydajności, aby zapewnić przejrzystą i profesjonalną prezentację.',
+                            'Osobista strona portfolio web developera, stworzona do prezentacji projektów i doświadczenia. Projekt opiera się o minimalistyczny interfejs, responsywny dizajn, komponenty wielokrotnego użytku oraz optymalizację wydajności, aby zapewnić przejrzystą i profesjonalną prezentację projektów.',
                     },
                     reactPokedex: {
                         name: 'React Pokédex',
                         description:
-                            'Aplikacja kliencka stworzona jako środowisko do eksperymentowania z nowoczesnymi bibliotekami Reacta. Projekt koncentruje się na pobieraniu danych i zarządzaniu stanem z wykorzystaniem PokéAPI, umożliwiając użytkownikom przeglądanie Pokémonów, wyświetlanie szczegółowych informacji oraz zarządzanie listą ulubionych.',
+                            'Aplikacja stworzona jako przestrzeń do eksperymentowania z nowoczesnym ekosystemem Reacta. Projekt koncentruje się na pobieraniu danych i zarządzaniu stanem z wykorzystaniem PokéAPI, umożliwiając przeglądanie Pokémonów, podgląd szczegółowych informacji oraz zarządzanie listą ulubionych.',
                     },
                     zenithCalendar: {
                         name: 'Zenith Calendar',
                         description:
-                            'Aplikacja webowa kalendarza do zarządzania wydarzeniami, z czystym i nowoczesnym interfejsem. Projekt koncentruje się na zarządzaniu stanem, trwałym przechowywaniu danych z wykorzystaniem lokalnej pamięci przeglądarki oraz konfigurowalnych preferencjach użytkownika, takich jak wybór motywu czy pierwszy dzień tygodnia.',
+                            'Webowa aplikacja kalendarza do zarządzania wydarzeniami, utrzymana w czystym i nowoczesnym stylu. Projekt obejmuje zarządzanie stanem aplikacji, trwałe przechowywanie danych w pamięci lokalnej przeglądarki oraz konfigurowalne preferencje użytkownika.',
                     },
                     zenithDocs: {
                         name: 'Zenith Docs',
                         description:
-                            'Aplikacja webowa do edycji dokumentów inspirowana Google Docs. Projekt koncentruje się na współpracy w czasie rzeczywistym, zaawansowanej edycji tekstu oraz automatycznej synchronizacji treści z wykorzystaniem Firebase, umożliwiając wielu użytkownikom jednoczesną pracę nad tym samym dokumentem.',
+                            'Aplikacja webowa do edycji dokumentów inspirowana Google Docs. Projekt skupia się na współpracy w czasie rzeczywistym, zaawansowanej edycji tekstu oraz automatycznej synchronizacji treści z wykorzystaniem Firebase, umożliwiając jednoczesną pracę wielu użytkowników na tym samym dokumencie.',
                     },
                     mirekHandlarz: {
                         name: 'MirekHandlarz.pl',
                         description:
-                            'Front-end nowoczesnej platformy ogłoszeń motoryzacyjnych. Projekt skupia się na budowie komponentów UI wielokrotnego użytku, integracji z REST API, implementacji logiki filtrowania i listowania ofert oraz optymalizacji wydajności aplikacji pod kątem szybkiego ładowania i płynnej pracy z dużymi zbiorami danych.',
+                            'Front-end nowoczesnej platformy ogłoszeń motoryzacyjnych. Projekt koncentruje się na tworzeniu komponentów UI wielokrotnego użytku, integracji z REST API, implementacji wystawiania i przeglądania ofert oraz optymalizacji wydajności pod kątem szybkiego ładowania i płynnej pracy z dużą ilością danych.',
                     },
                     projektyWnetrz: {
                         name: 'Projekty Wnętrz',
                         description:
-                            'Strona portfolio dla projektanta wnętrz. Projekt koncentruje się na minimalistycznym, zorientowanym na treść interfejsie, tworzeniu komponentów layoutu wielokrotnego użytku oraz zapewnieniu pełnej responsywności w celu czytelnej prezentacji projektów i oferty na różnych urządzeniach.',
+                            'Strona portfolio dla projektanta wnętrz. Projekt skupia się na minimalistycznym, zorientowanym na treść interfejsie, komponentach layoutu wielokrotnego użytku oraz pełnej responsywności, zapewniającej czytelną prezentację projektów i oferty na różnych urządzeniach.',
                     },
                     stomatologPiasecki: {
                         name: 'Stomatolog Piasecki',
                         description:
-                            'Strona internetowa dla gabinetu stomatologicznego. Projekt koncentruje się na użyteczności i dostępności, ze szczególnym naciskiem na intuicyjną nawigację, responsywny układ, semantyczny HTML oraz kompatybilność między urządzeniami, aby zapewnić spójne i przyjazne doświadczenie użytkownika.',
+                            'Strona internetowa dla gabinetu stomatologicznego zaprojektowana z myślą o użyteczności i dostępności. Projekt kładzie nacisk na intuicyjną nawigację, responsywny układ, semantyczny HTML oraz spójne działanie na różnych urządzeniach.',
                     },
                 },
 
@@ -200,7 +200,7 @@ const resources = {
                 },
             },
             contactSection: {
-                heading: 'Napisz do mnie || Przywitaj się',
+                heading: 'Kontakt',
                 contactForm: {
                     nameLabel: 'Imię',
                     namePlaceholder: 'Adaś Miauczyński',
