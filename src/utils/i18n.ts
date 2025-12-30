@@ -10,6 +10,7 @@ const resources = {
                     skills: 'Skills',
                     projects: 'Projects',
                     contact: 'Contact',
+                    closeMenu: 'Close Menu',
                 },
                 languages: {
                     en: 'English',
@@ -111,6 +112,11 @@ const resources = {
                 },
                 location: 'Gdansk, Poland',
             },
+            footer: {
+                buttons: {
+                    scrollToTop: 'Scroll to the top',
+                },
+            },
         },
     },
     pl: {
@@ -120,6 +126,7 @@ const resources = {
                     skills: 'Umiejętności',
                     projects: 'Projekty',
                     contact: 'Kontakt',
+                    closeMenu: 'Zamknij menu',
                 },
                 languages: {
                     en: 'Angielski',
@@ -221,6 +228,11 @@ const resources = {
                     },
                 },
                 location: 'Gdańsk, Polska',
+            },
+            footer: {
+                buttons: {
+                    scrollToTop: 'Przewiń do góry',
+                },
             },
         },
     },
