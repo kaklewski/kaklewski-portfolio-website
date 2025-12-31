@@ -1,7 +1,6 @@
 import {
     Button,
     Card,
-    Container,
     Field,
     Flex,
     Input,
@@ -20,6 +19,7 @@ import {
 import { FormEvent, forwardRef, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/CustomHeading';
+import SectionContainer from '../elements/SectionContainer';
 import { Toaster, toaster } from '../ui/toaster';
 
 const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
@@ -61,7 +61,7 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
     );
 
     return (
-        <ContactSectionContainer ref={ref}>
+        <SectionContainer sectionId="contact" ref={ref}>
             <Toaster />
 
             <CustomHeading text={t('contactSection.heading')} />
@@ -70,24 +70,9 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
                 <ContactForm onSubmit={handleSubmit} />
                 <ContactSocialLinks />
             </SimpleGrid>
-        </ContactSectionContainer>
+        </SectionContainer>
     );
 });
-
-const ContactSectionContainer = forwardRef<
-    HTMLDivElement,
-    { children: ReactNode }
->(({ children }, ref) => (
-    <Container
-        ref={ref}
-        id="contact"
-        maxW="7xl"
-        py={{ base: 20, md: 36 }}
-        backgroundImage="url(background.png)"
-    >
-        {children}
-    </Container>
-));
 
 type ContactFormProps = {
     onSubmit: (event: FormEvent<HTMLFormElement>) => void;

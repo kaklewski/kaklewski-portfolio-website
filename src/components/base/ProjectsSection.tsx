@@ -3,7 +3,6 @@ import {
     Box,
     Button,
     Card,
-    Container,
     Flex,
     Heading,
     HStack,
@@ -14,6 +13,7 @@ import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import { forwardRef, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/CustomHeading';
+import SectionContainer from '../elements/SectionContainer';
 
 const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const { t } = useTranslation();
@@ -140,7 +140,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     };
 
     return (
-        <ProjectsSectionContainer ref={ref}>
+        <SectionContainer sectionId="projects" ref={ref}>
             <CustomHeading text={t('projectsSection.heading')} />
 
             <ProjectGrid
@@ -190,24 +190,9 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                     />
                 ))}
             </ProjectGrid>
-        </ProjectsSectionContainer>
+        </SectionContainer>
     );
 });
-
-const ProjectsSectionContainer = forwardRef<
-    HTMLDivElement,
-    { children: ReactNode }
->(({ children }, ref) => (
-    <Container
-        ref={ref}
-        maxW="7xl"
-        id="projects"
-        py={{ base: 20, md: 36 }}
-        backgroundImage="url(background.png)"
-    >
-        {children}
-    </Container>
-));
 
 type ProjectGridProps = {
     headingText: string;

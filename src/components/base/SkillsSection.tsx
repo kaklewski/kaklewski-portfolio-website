@@ -1,4 +1,4 @@
-import { Badge, Card, Container, Flex, SimpleGrid } from '@chakra-ui/react';
+import { Badge, Card, Flex, SimpleGrid } from '@chakra-ui/react';
 import {
     SiCss,
     SiDocker,
@@ -27,32 +27,18 @@ import { IconBrandAdobePhotoshop, IconVersions } from '@tabler/icons-react';
 import { forwardRef, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomHeading from '../elements/CustomHeading';
+import SectionContainer from '../elements/SectionContainer';
 
 const SkillsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const { t } = useTranslation();
 
     return (
-        <SkillsSectionContainer ref={ref}>
+        <SectionContainer sectionId="skills" ref={ref}>
             <CustomHeading text={t('skillsSection.heading')} />
             <SkillCardGrid />
-        </SkillsSectionContainer>
+        </SectionContainer>
     );
 });
-
-const SkillsSectionContainer = forwardRef<
-    HTMLDivElement,
-    { children: ReactNode }
->(({ children }, ref) => (
-    <Container
-        ref={ref}
-        maxW="7xl"
-        id="skills"
-        py={{ base: 20, md: 36 }}
-        backgroundImage="url(background.png)"
-    >
-        {children}
-    </Container>
-));
 
 const SkillCardGrid = () => (
     <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
