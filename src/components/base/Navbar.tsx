@@ -85,7 +85,7 @@ const NavbarContainer = ({ children }: NavbarContainerProps) => (
         as="nav"
         py={4}
         width="100%"
-        borderBottomWidth="1px"
+        borderBottomWidth={1}
         position={{ base: 'sticky', md: 'fixed' }}
         top={0}
         zIndex="1000"
@@ -161,8 +161,7 @@ const MobileNav = ({
             <DrawerContent
                 backgroundColor="rgba(9,9,11,.9)"
                 backdropFilter="blur(13px) saturate(130%)"
-                borderLeftWidth="1px"
-                borderLeftColor="gray.900"
+                borderLeftWidth={1}
                 shadow="none"
             >
                 <DrawerBody>

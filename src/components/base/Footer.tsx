@@ -22,7 +22,7 @@ type FooterContainerProps = {
 };
 
 const FooterContainer = ({ children }: FooterContainerProps) => (
-    <Box as="footer" py={8} width="100%" borderTopWidth="1px">
+    <Box as="footer" py={8} width="100%" borderTopWidth={1}>
         <Container maxW="7xl">{children}</Container>
     </Box>
 );
