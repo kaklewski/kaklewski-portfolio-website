@@ -1,5 +1,4 @@
 import {
-    Box,
     Button,
     Card,
     Container,
@@ -18,9 +17,9 @@ import {
     IconMapPin,
     IconSend,
 } from '@tabler/icons-react';
-import { FormEvent, forwardRef, useCallback } from 'react';
+import { FormEvent, forwardRef, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import CustomHeading from '../elements/Heading';
+import CustomHeading from '../elements/CustomHeading';
 import { Toaster, toaster } from '../ui/toaster';
 
 const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
@@ -50,7 +49,9 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
             } catch (err) {
                 toaster.create({
                     title: t('contactSection.toasts.error.title'),
-                    description: `${t('contactSection.toasts.error.description')} ${(err as Error).message}`,
+                    description: `${t(
+                        'contactSection.toasts.error.description',
+                    )} ${(err as Error).message}`,
                     type: 'error',
                     closable: true,
                 });
@@ -60,30 +61,39 @@ const ContactSection = forwardRef<HTMLDivElement>((_, ref) => {
     );
 
     return (
-        <Container
-            maxW="7xl"
-            id="contact"
-            py={{ base: 20, md: 36 }}
-            backgroundImage="url(background.png)"
-            ref={ref}
-        >
+        <ContactSectionContainer ref={ref}>
             <Toaster />
 
             <CustomHeading text={t('contactSection.heading')} />
 
             <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 16, md: 6 }}>
-                <FormCard handleSubmit={handleSubmit} />
-                <SocialLinks />
+                <ContactForm onSubmit={handleSubmit} />
+                <ContactSocialLinks />
             </SimpleGrid>
-        </Container>
+        </ContactSectionContainer>
     );
 });
 
-type FormCardProps = {
-    handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+const ContactSectionContainer = forwardRef<
+    HTMLDivElement,
+    { children: ReactNode }
+>(({ children }, ref) => (
+    <Container
+        ref={ref}
+        id="contact"
+        maxW="7xl"
+        py={{ base: 20, md: 36 }}
+        backgroundImage="url(background.png)"
+    >
+        {children}
+    </Container>
+));
+
+type ContactFormProps = {
+    onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 };
 
-const FormCard = ({ handleSubmit }: FormCardProps) => {
+const ContactForm = ({ onSubmit }: ContactFormProps) => {
     const { t } = useTranslation();
 
     return (
@@ -94,66 +104,42 @@ const FormCard = ({ handleSubmit }: FormCardProps) => {
                     method="POST"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
-                    onSubmit={handleSubmit}
+                    onSubmit={onSubmit}
                 >
                     <input type="hidden" name="form-name" value="contact" />
+
                     <Stack gap={6}>
-                        <Field.Root
-                            maxH="0"
-                            maxW="0"
-                            visibility="collapse"
-                            position="absolute"
-                        >
-                            <Field.Label>Bot</Field.Label>
-                            <Input name="bot-field" title="bot-field" />
-                        </Field.Root>
-                        <Field.Root required>
-                            <Field.Label>
-                                {t('contactSection.contactForm.nameLabel')}
-                            </Field.Label>
-                            <Input
-                                placeholder={t(
-                                    'contactSection.contactForm.namePlaceholder',
-                                )}
-                                type="text"
-                                name="name"
-                            />
-                        </Field.Root>
-                        <Field.Root required>
-                            <Field.Label>
-                                {t('contactSection.contactForm.emailLabel')}
-                            </Field.Label>
-                            <Input
-                                placeholder={t(
-                                    'contactSection.contactForm.emailPlaceholder',
-                                )}
-                                type="email"
-                                name="email"
-                            />
-                        </Field.Root>
-                        <Field.Root required>
-                            <Field.Label>
-                                {t('contactSection.contactForm.messageLabel')}
-                            </Field.Label>
-                            <Textarea
-                                placeholder={t(
-                                    'contactSection.contactForm.messagePlaceholder',
-                                )}
-                                rows={5}
-                                name="message"
-                            />
-                        </Field.Root>
-                        <Button
-                            variant="surface"
-                            rounded="full"
-                            maxW="fit-content"
-                            alignSelf="center"
-                            colorPalette="teal"
-                            type="submit"
-                        >
-                            <IconSend />{' '}
+                        <NetlifyHoneypot />
+
+                        <FormField
+                            label={t('contactSection.contactForm.nameLabel')}
+                            placeholder={t(
+                                'contactSection.contactForm.namePlaceholder',
+                            )}
+                            name="name"
+                        />
+
+                        <FormField
+                            type="email"
+                            label={t('contactSection.contactForm.emailLabel')}
+                            placeholder={t(
+                                'contactSection.contactForm.emailPlaceholder',
+                            )}
+                            name="email"
+                        />
+
+                        <FormTextarea
+                            label={t('contactSection.contactForm.messageLabel')}
+                            placeholder={t(
+                                'contactSection.contactForm.messagePlaceholder',
+                            )}
+                            name="message"
+                        />
+
+                        <SubmitButton>
+                            <IconSend />
                             {t('contactSection.contactForm.submitButton')}
-                        </Button>
+                        </SubmitButton>
                     </Stack>
                 </form>
             </Card.Body>
@@ -161,51 +147,109 @@ const FormCard = ({ handleSubmit }: FormCardProps) => {
     );
 };
 
-const SocialLinks = () => {
+const NetlifyHoneypot = () => (
+    <Field.Root maxH="0" maxW="0" visibility="collapse" position="absolute">
+        <Field.Label>Bot</Field.Label>
+        <Input name="bot-field" title="bot-field" />
+    </Field.Root>
+);
+
+type FormFieldProps = {
+    label: string;
+    placeholder: string;
+    name: string;
+    type?: string;
+};
+
+const FormField = ({
+    label,
+    placeholder,
+    name,
+    type = 'text',
+}: FormFieldProps) => (
+    <Field.Root required>
+        <Field.Label>{label}</Field.Label>
+        <Input name={name} type={type} placeholder={placeholder} />
+    </Field.Root>
+);
+
+type FormTextareaProps = {
+    label: string;
+    placeholder: string;
+    name: string;
+};
+
+const FormTextarea = ({ label, placeholder, name }: FormTextareaProps) => (
+    <Field.Root required>
+        <Field.Label>{label}</Field.Label>
+        <Textarea name={name} rows={5} placeholder={placeholder} />
+    </Field.Root>
+);
+
+type SubmitButtonProps = { children: ReactNode };
+
+const SubmitButton = ({ children }: SubmitButtonProps) => (
+    <Button
+        type="submit"
+        variant="surface"
+        rounded="full"
+        maxW="fit-content"
+        alignSelf="center"
+        colorPalette="teal"
+    >
+        {children}
+    </Button>
+);
+
+const ContactSocialLinks = () => {
     const { t } = useTranslation();
 
     return (
-        <Flex justifyContent="center" alignItems="center">
-            <Flex direction="column" gap={{ base: 8, md: 12 }} color="teal.400">
-                <Box>
-                    <Flex gap={1} alignItems="center">
-                        <IconMapPin stroke={1} size={50} />
-                        <Text
-                            className="accent-font"
-                            color="white"
-                            fontSize="20px"
-                        >
-                            {t('contactSection.location')}
-                        </Text>
-                    </Flex>
-                </Box>
-                <Box>
-                    <Flex gap={1} alignItems="center">
-                        <IconBrandLinkedin stroke={1} size={50} />
-                        <Link
-                            href="https://www.linkedin.com/in/oskar-kaklewski/"
-                            target="_blank"
-                        >
-                            <Text className="accent-font" fontSize="20px">
-                                /in/oskar-kaklewski
-                            </Text>
-                        </Link>
-                    </Flex>
-                </Box>
-                <Box>
-                    <Flex gap={1} alignItems="center">
-                        <IconBrandGithub stroke={1} size={50} />
-                        <Link
-                            href="https://github.com/kaklewski"
-                            target="_blank"
-                        >
-                            <Text className="accent-font" fontSize="20px">
-                                /kaklewski
-                            </Text>
-                        </Link>
-                    </Flex>
-                </Box>
-            </Flex>
+        <Flex justify="center" align="center">
+            <Stack gap={{ base: 8, md: 12 }} color="teal.400">
+                <SocialItem icon={<IconMapPin stroke={1} size={50} />}>
+                    {t('contactSection.location')}
+                </SocialItem>
+
+                <SocialItem
+                    icon={<IconBrandLinkedin stroke={1} size={50} />}
+                    href="https://www.linkedin.com/in/oskar-kaklewski/"
+                >
+                    /in/oskar-kaklewski
+                </SocialItem>
+
+                <SocialItem
+                    icon={<IconBrandGithub stroke={1} size={50} />}
+                    href="https://github.com/kaklewski"
+                >
+                    /kaklewski
+                </SocialItem>
+            </Stack>
+        </Flex>
+    );
+};
+
+type SocialItemProps = {
+    icon: ReactNode;
+    href?: string;
+    children: ReactNode;
+};
+
+const SocialItem = ({ icon, href, children }: SocialItemProps) => {
+    const content = href ? (
+        <Link href={href} target="_blank">
+            {children}
+        </Link>
+    ) : (
+        children
+    );
+
+    return (
+        <Flex gap={2} align="center">
+            {icon}
+            <Text className="accent-font" color="white" fontSize="20px">
+                {content}
+            </Text>
         </Flex>
     );
 };

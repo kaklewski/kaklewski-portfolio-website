@@ -13,132 +13,140 @@ import {
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import { forwardRef, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import CustomHeading from '../elements/Heading';
+import CustomHeading from '../elements/CustomHeading';
 
 const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const { t } = useTranslation();
 
-    const personalProjects = [
-        {
-            image: 'screenshots/kalkdoktor.png',
-            name: t('projectsSection.projects.kalkdoktor.name'),
-            description: t('projectsSection.projects.kalkdoktor.description'),
-            tools: ['React', 'TypeScript', 'Chakra UI', 'Vite', 'PWA'],
-            demoUrl: 'https://kalkdoktor.pl',
-            codeUrl: 'https://github.com/kaklewski/kalkdoktor',
-        },
-        {
-            image: 'screenshots/lingva.png',
-            name: t('projectsSection.projects.lingvaSidebar.name'),
-            description: t(
-                'projectsSection.projects.lingvaSidebar.description',
-            ),
-            tools: ['JavaScript', 'HTML5', 'WebExtensions API', 'Lingva API'],
-            demoUrl:
-                'https://addons.mozilla.org/firefox/addon/lingva-in-sidebar',
-            codeUrl: 'https://github.com/kaklewski/lingva-sidebar',
-        },
-        {
-            image: 'screenshots/amnesia.png',
-            name: t('projectsSection.projects.amnesia.name'),
-            description: t('projectsSection.projects.amnesia.description'),
-            tools: ['JavaScript', 'HTML5', 'WebExtensions API'],
-            demoUrl:
-                'https://addons.mozilla.org/firefox/addon/amnesia-cleaner/',
-            codeUrl: 'https://github.com/kaklewski/amnesia',
-        },
-        {
-            image: 'screenshots/portfolio.png',
-            name: t('projectsSection.projects.portfolio.name'),
-            description: t('projectsSection.projects.portfolio.description'),
-            tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
-            demoUrl: 'https://kaklewski.pl',
-            codeUrl: 'https://github.com/kaklewski/kaklewski-portfolio-website',
-        },
-    ];
-
-    const technicalDemos = [
-        {
-            image: 'screenshots/react-pokedex.png',
-            name: t('projectsSection.projects.reactPokedex.name'),
-            description: t('projectsSection.projects.reactPokedex.description'),
-            tools: [
-                'React',
-                'TypeScript',
-                'Mantine UI',
-                'TanStack libraries',
-                'Vite',
-                'PokéAPI',
-            ],
-            demoUrl: 'https://react-pokedex-2.netlify.app',
-            codeUrl: 'https://github.com/kaklewski/react-pokedex',
-        },
-        {
-            image: 'screenshots/zenith-calendar.png',
-            name: t('projectsSection.projects.zenithCalendar.name'),
-            description: t(
-                'projectsSection.projects.zenithCalendar.description',
-            ),
-            tools: ['React', 'TypeScript', 'SASS', 'Vite'],
-            demoUrl: 'https://zenith-calendar.netlify.app',
-            codeUrl: 'https://github.com/kaklewski/zenith-calendar',
-        },
-        {
-            image: 'screenshots/zenith-docs.png',
-            name: t('projectsSection.projects.zenithDocs.name'),
-            description: t('projectsSection.projects.zenithDocs.description'),
-            tools: ['React', 'TypeScript', 'SASS', 'Firebase', 'Vite'],
-            demoUrl: 'https://zenith-docs.netlify.app/',
-            codeUrl: 'https://github.com/kaklewski/zenith-docs',
-        },
-    ];
-
-    const commercialProjects = [
-        {
-            image: 'screenshots/mirek-handlarz.png',
-            name: t('projectsSection.projects.mirekHandlarz.name'),
-            description: t(
-                'projectsSection.projects.mirekHandlarz.description',
-            ),
-            tools: ['TypeScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
-            demoUrl: 'https://mirekhandlarz.pl',
-        },
-        {
-            image: 'screenshots/projekty-wnetrz.png',
-            name: t('projectsSection.projects.projektyWnetrz.name'),
-            description: t(
-                'projectsSection.projects.projektyWnetrz.description',
-            ),
-            tools: ['JavaScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
-            demoUrl: 'https://projektywnetrz.net',
-            codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
-        },
-        {
-            image: 'screenshots/stomatolog-piasecki.png',
-            name: t('projectsSection.projects.stomatologPiasecki.name'),
-            description: t(
-                'projectsSection.projects.stomatologPiasecki.description',
-            ),
-            tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp', 'RWD'],
-            demoUrl: 'https://stomatologpiasecki.pl',
-            codeUrl: 'https://github.com/kaklewski/stomatolog-piasecki',
-        },
-    ];
+    const projects = {
+        personal: [
+            {
+                image: 'screenshots/kalkdoktor.png',
+                name: t('projectsSection.projects.kalkdoktor.name'),
+                description: t(
+                    'projectsSection.projects.kalkdoktor.description',
+                ),
+                tools: ['React', 'TypeScript', 'Chakra UI', 'Vite', 'PWA'],
+                demoUrl: 'https://kalkdoktor.pl',
+                codeUrl: 'https://github.com/kaklewski/kalkdoktor',
+            },
+            {
+                image: 'screenshots/lingva.png',
+                name: t('projectsSection.projects.lingvaSidebar.name'),
+                description: t(
+                    'projectsSection.projects.lingvaSidebar.description',
+                ),
+                tools: [
+                    'JavaScript',
+                    'HTML5',
+                    'WebExtensions API',
+                    'Lingva API',
+                ],
+                demoUrl:
+                    'https://addons.mozilla.org/firefox/addon/lingva-in-sidebar',
+                codeUrl: 'https://github.com/kaklewski/lingva-sidebar',
+            },
+            {
+                image: 'screenshots/amnesia.png',
+                name: t('projectsSection.projects.amnesia.name'),
+                description: t('projectsSection.projects.amnesia.description'),
+                tools: ['JavaScript', 'HTML5', 'WebExtensions API'],
+                demoUrl:
+                    'https://addons.mozilla.org/firefox/addon/amnesia-cleaner/',
+                codeUrl: 'https://github.com/kaklewski/amnesia',
+            },
+            {
+                image: 'screenshots/portfolio.png',
+                name: t('projectsSection.projects.portfolio.name'),
+                description: t(
+                    'projectsSection.projects.portfolio.description',
+                ),
+                tools: ['React', 'TypeScript', 'Chakra UI', 'Vite'],
+                demoUrl: 'https://kaklewski.pl',
+                codeUrl:
+                    'https://github.com/kaklewski/kaklewski-portfolio-website',
+            },
+        ],
+        demos: [
+            {
+                image: 'screenshots/react-pokedex.png',
+                name: t('projectsSection.projects.reactPokedex.name'),
+                description: t(
+                    'projectsSection.projects.reactPokedex.description',
+                ),
+                tools: [
+                    'React',
+                    'TypeScript',
+                    'Mantine UI',
+                    'TanStack libraries',
+                    'Vite',
+                    'PokéAPI',
+                ],
+                demoUrl: 'https://react-pokedex-2.netlify.app',
+                codeUrl: 'https://github.com/kaklewski/react-pokedex',
+            },
+            {
+                image: 'screenshots/zenith-calendar.png',
+                name: t('projectsSection.projects.zenithCalendar.name'),
+                description: t(
+                    'projectsSection.projects.zenithCalendar.description',
+                ),
+                tools: ['React', 'TypeScript', 'SASS', 'Vite'],
+                demoUrl: 'https://zenith-calendar.netlify.app',
+                codeUrl: 'https://github.com/kaklewski/zenith-calendar',
+            },
+            {
+                image: 'screenshots/zenith-docs.png',
+                name: t('projectsSection.projects.zenithDocs.name'),
+                description: t(
+                    'projectsSection.projects.zenithDocs.description',
+                ),
+                tools: ['React', 'TypeScript', 'SASS', 'Firebase', 'Vite'],
+                demoUrl: 'https://zenith-docs.netlify.app/',
+                codeUrl: 'https://github.com/kaklewski/zenith-docs',
+            },
+        ],
+        commercial: [
+            {
+                image: 'screenshots/mirek-handlarz.png',
+                name: t('projectsSection.projects.mirekHandlarz.name'),
+                description: t(
+                    'projectsSection.projects.mirekHandlarz.description',
+                ),
+                tools: ['TypeScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
+                demoUrl: 'https://mirekhandlarz.pl',
+            },
+            {
+                image: 'screenshots/projekty-wnetrz.png',
+                name: t('projectsSection.projects.projektyWnetrz.name'),
+                description: t(
+                    'projectsSection.projects.projektyWnetrz.description',
+                ),
+                tools: ['JavaScript', 'HTML5', 'SASS', 'Vite', 'RWD'],
+                demoUrl: 'https://projektywnetrz.net',
+                codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
+            },
+            {
+                image: 'screenshots/stomatolog-piasecki.png',
+                name: t('projectsSection.projects.stomatologPiasecki.name'),
+                description: t(
+                    'projectsSection.projects.stomatologPiasecki.description',
+                ),
+                tools: ['JavaScript', 'HTML5', 'SASS', 'Gulp', 'RWD'],
+                demoUrl: 'https://stomatologpiasecki.pl',
+                codeUrl: 'https://github.com/kaklewski/stomatolog-piasecki',
+            },
+        ],
+    };
 
     return (
-        <Container
-            maxW="7xl"
-            id="projects"
-            py={{ base: 20, md: 36 }}
-            backgroundImage="url(background.png)"
-            ref={ref}
-        >
+        <ProjectsSectionContainer ref={ref}>
             <CustomHeading text={t('projectsSection.heading')} />
 
             <ProjectGrid
                 headingText={t('projectsSection.sections.personalProjects')}
             >
-                {personalProjects.map((project) => (
+                {projects.personal.map((project) => (
                     <ProjectCard
                         key={project.name}
                         image={project.image}
@@ -154,7 +162,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             <ProjectGrid
                 headingText={t('projectsSection.sections.technicalDemos')}
             >
-                {technicalDemos.map((project) => (
+                {projects.demos.map((project) => (
                     <ProjectCard
                         key={project.name}
                         image={project.image}
@@ -170,7 +178,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
             <ProjectGrid
                 headingText={t('projectsSection.sections.commercialProjects')}
             >
-                {commercialProjects.map((project) => (
+                {projects.commercial.map((project) => (
                     <ProjectCard
                         key={project.name}
                         image={project.image}
@@ -182,9 +190,24 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                     />
                 ))}
             </ProjectGrid>
-        </Container>
+        </ProjectsSectionContainer>
     );
 });
+
+const ProjectsSectionContainer = forwardRef<
+    HTMLDivElement,
+    { children: ReactNode }
+>(({ children }, ref) => (
+    <Container
+        ref={ref}
+        maxW="7xl"
+        id="projects"
+        py={{ base: 20, md: 36 }}
+        backgroundImage="url(background.png)"
+    >
+        {children}
+    </Container>
+));
 
 type ProjectGridProps = {
     headingText: string;
@@ -260,43 +283,53 @@ const ProjectCard = ({
                     </Card.Description>
                     <HStack mt="4">
                         {tools.map((tool) => (
-                            <Badge
-                                key={tool}
-                                variant="outline"
-                                colorPalette="teal"
-                            >
-                                {tool}
-                            </Badge>
+                            <ToolBadge key={tool} name={tool} />
                         ))}
                     </HStack>
                 </Card.Body>
                 <Card.Footer>
-                    <Button rounded="full" asChild>
-                        <a
-                            href={demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <IconExternalLink stroke={1.75} />{' '}
-                            {t('projectsSection.buttons.viewProject')}
-                        </a>
-                    </Button>
+                    <LinkButton url={demoUrl} icon={<IconExternalLink />}>
+                        {t('projectsSection.buttons.viewProject')}
+                    </LinkButton>
                     {codeUrl && (
-                        <Button variant="surface" rounded="full" asChild>
-                            <a
-                                href={codeUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <IconBrandGithub stroke={1.75} />
-                                {t('projectsSection.buttons.viewCode')}
-                            </a>
-                        </Button>
+                        <LinkButton
+                            url={codeUrl}
+                            icon={<IconBrandGithub />}
+                            variant="surface"
+                        >
+                            {t('projectsSection.buttons.viewCode')}
+                        </LinkButton>
                     )}
                 </Card.Footer>
             </Flex>
         </Card.Root>
     );
 };
+
+type ToolBadgeProps = {
+    name: string;
+};
+
+const ToolBadge = ({ name }: ToolBadgeProps) => (
+    <Badge variant="outline" colorPalette="teal">
+        {name}
+    </Badge>
+);
+
+type LinkButtonProps = {
+    url: string;
+    icon: ReactNode;
+    variant?: 'solid' | 'subtle' | 'outline' | 'ghost' | 'surface' | 'plain';
+    children: ReactNode;
+};
+
+const LinkButton = ({ url, icon, variant, children }: LinkButtonProps) => (
+    <Button rounded="full" asChild variant={variant}>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+            {icon}
+            {children}
+        </a>
+    </Button>
+);
 
 export default ProjectsSection;
