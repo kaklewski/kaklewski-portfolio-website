@@ -17,4 +17,19 @@ export default defineConfig({
             include: '**/*.svg',
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    react: ['react', 'react-dom'],
+                    ui: ['@chakra-ui/react'],
+                    icons: [
+                        'react-icons',
+                        '@tabler/icons-react',
+                        '@icons-pack/react-simple-icons',
+                    ],
+                },
+            },
+        },
+    },
 });
