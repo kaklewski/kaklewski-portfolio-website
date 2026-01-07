@@ -6,7 +6,7 @@ import './utils/i18n.ts';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <Provider>
+        <Provider defaultTheme="dark">
             <App />
         </Provider>
     </StrictMode>,

@@ -1,4 +1,4 @@
-import { Box, Separator, Theme } from '@chakra-ui/react';
+import { Box, Separator } from '@chakra-ui/react';
 import { useRef } from 'react';
 import ContactSection from './components/base/ContactSection';
 import Footer from './components/base/Footer';
@@ -20,7 +20,7 @@ const App = () => {
     };
 
     return (
-        <Theme appearance="dark">
+        <>
             <Navbar sections={sections} />
             <Box as="main" ref={mainContentRef}>
                 <HeroSection skillsSectionRef={skillsSectionRef} />
@@ -31,7 +31,7 @@ const App = () => {
                 <ContactSection ref={contactSectionRef} />
                 <Footer mainContentRef={mainContentRef} />
             </Box>
-        </Theme>
+        </>
     );
 };
 

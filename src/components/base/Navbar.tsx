@@ -206,7 +206,6 @@ const NavLinkButton = ({ variant, label, onClick }: NavLinkButtonProps) => (
         variant={variant === 'navbar' ? 'ghost' : 'plain'}
         size={variant === 'navbar' ? 'lg' : 'md'}
         fontSize={variant === 'menu' ? 40 : undefined}
-        color="whiteAlpha.900"
         onClick={onClick}
     >
         {label}
