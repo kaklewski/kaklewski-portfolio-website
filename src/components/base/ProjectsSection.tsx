@@ -247,6 +247,7 @@ const ProjectCard = ({
             <Box maxW="100%" aspectRatio="16/9" overflow={'hidden'}>
                 <Image
                     objectFit="cover"
+                    width="100%"
                     src={image}
                     alt={`Screenshot of ${name}`}
                     transition="scale .25s"
