@@ -50,6 +50,7 @@ const LanguageSelect = () => {
 };
 
 const SelectTrigger = () => {
+    const { t } = useTranslation();
     const select = useSelectContext();
     const items = select.selectedItems;
 
@@ -57,6 +58,7 @@ const SelectTrigger = () => {
 
     return (
         <IconButton
+            aria-label={t('navbar.buttons.changeLanguage')}
             variant="outline"
             {...select.getTriggerProps()}
             size={{ base: 'md', md: 'lg' }}

@@ -11,6 +11,7 @@ const resources = {
                     projects: 'Projects',
                     contact: 'Contact',
                     closeMenu: 'Close Menu',
+                    changeLanguage: 'Change Language',
                 },
                 languages: {
                     en: 'English',
@@ -21,6 +22,9 @@ const resources = {
                 greeting: 'Hello! myName =',
                 tagline:
                     "I'm a Web Developer who builds fast, modern, and great looking web apps.",
+                buttons: {
+                    scrollDown: 'Scroll Down',
+                },
             },
             skillsSection: {
                 heading: 'My Skills && Stack',
@@ -127,6 +131,7 @@ const resources = {
                     projects: 'Projekty',
                     contact: 'Kontakt',
                     closeMenu: 'Zamknij menu',
+                    changeLanguage: 'Zmień język',
                 },
                 languages: {
                     en: 'Angielski',
@@ -137,6 +142,9 @@ const resources = {
                 greeting: 'Cześć! Jestem',
                 tagline:
                     'Jestem Web Developerem, który tworzy szybkie, nowoczesne i świetnie wyglądające aplikacje internetowe.',
+                buttons: {
+                    scrollDown: 'Zjedź niżej',
+                },
             },
             skillsSection: {
                 heading: 'Technologie i umiejętności',

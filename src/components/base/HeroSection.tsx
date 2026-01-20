@@ -172,15 +172,20 @@ type ScrollDownButtonProps = {
     skillsSectionRef: RefObject<HTMLDivElement | null>;
 };
 
-const ScrollDownButton = ({ skillsSectionRef }: ScrollDownButtonProps) => (
-    <IconButton
-        variant="outline"
-        rounded="full"
-        size="lg"
-        onClick={() => scrollToSection(skillsSectionRef)}
-    >
-        <IconArrowDownDashed />
-    </IconButton>
-);
+const ScrollDownButton = ({ skillsSectionRef }: ScrollDownButtonProps) => {
+    const { t } = useTranslation();
+
+    return (
+        <IconButton
+            aria-label={t('heroSection.buttons.scrollDown')}
+            variant="outline"
+            rounded="full"
+            size="lg"
+            onClick={() => scrollToSection(skillsSectionRef)}
+        >
+            <IconArrowDownDashed />
+        </IconButton>
+    );
+};
 
 export default HeroSection;
