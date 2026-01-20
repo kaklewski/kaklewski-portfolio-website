@@ -69,7 +69,6 @@ const HeroSectionContainer = ({ children }: HeroSectionContainerProps) => (
         justifyContent="center"
         alignItems="center"
         height={{ md: '100vh' }}
-        backgroundImage="url(background.png)"
     >
         {children}
     </Flex>

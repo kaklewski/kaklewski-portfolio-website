@@ -14,7 +14,6 @@ const SectionContainer = forwardRef<HTMLDivElement, SectionContainerProps>(
             as="section"
             maxW="7xl"
             py={{ base: 20, md: 36 }}
-            backgroundImage="url(background.png)"
         >
             {children}
         </Container>
