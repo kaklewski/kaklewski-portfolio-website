@@ -21,7 +21,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
     const projects = {
         personal: [
             {
-                image: 'screenshots/kalkdoktor.png',
+                image: 'screenshots/kalkdoktor.webp',
                 name: t('projectsSection.projects.kalkdoktor.name'),
                 description: t(
                     'projectsSection.projects.kalkdoktor.description',
@@ -31,7 +31,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/kalkdoktor',
             },
             {
-                image: 'screenshots/lingva.png',
+                image: 'screenshots/lingva.webp',
                 name: t('projectsSection.projects.lingvaSidebar.name'),
                 description: t(
                     'projectsSection.projects.lingvaSidebar.description',
@@ -47,7 +47,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/lingva-sidebar',
             },
             {
-                image: 'screenshots/amnesia.png',
+                image: 'screenshots/amnesia.webp',
                 name: t('projectsSection.projects.amnesia.name'),
                 description: t('projectsSection.projects.amnesia.description'),
                 tools: ['JavaScript', 'HTML5', 'WebExtensions API'],
@@ -56,7 +56,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/amnesia',
             },
             {
-                image: 'screenshots/portfolio.png',
+                image: 'screenshots/portfolio.webp',
                 name: t('projectsSection.projects.portfolio.name'),
                 description: t(
                     'projectsSection.projects.portfolio.description',
@@ -69,7 +69,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         ],
         demos: [
             {
-                image: 'screenshots/react-pokedex.png',
+                image: 'screenshots/react-pokedex.webp',
                 name: t('projectsSection.projects.reactPokedex.name'),
                 description: t(
                     'projectsSection.projects.reactPokedex.description',
@@ -86,7 +86,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/react-pokedex',
             },
             {
-                image: 'screenshots/zenith-calendar.png',
+                image: 'screenshots/zenith-calendar.webp',
                 name: t('projectsSection.projects.zenithCalendar.name'),
                 description: t(
                     'projectsSection.projects.zenithCalendar.description',
@@ -96,7 +96,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/zenith-calendar',
             },
             {
-                image: 'screenshots/zenith-docs.png',
+                image: 'screenshots/zenith-docs.webp',
                 name: t('projectsSection.projects.zenithDocs.name'),
                 description: t(
                     'projectsSection.projects.zenithDocs.description',
@@ -108,7 +108,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
         ],
         commercial: [
             {
-                image: 'screenshots/mirek-handlarz.png',
+                image: 'screenshots/mirek-handlarz.webp',
                 name: t('projectsSection.projects.mirekHandlarz.name'),
                 description: t(
                     'projectsSection.projects.mirekHandlarz.description',
@@ -117,7 +117,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 demoUrl: 'https://mirekhandlarz.pl',
             },
             {
-                image: 'screenshots/projekty-wnetrz.png',
+                image: 'screenshots/projekty-wnetrz.webp',
                 name: t('projectsSection.projects.projektyWnetrz.name'),
                 description: t(
                     'projectsSection.projects.projektyWnetrz.description',
@@ -127,7 +127,7 @@ const ProjectsSection = forwardRef<HTMLDivElement>((_, ref) => {
                 codeUrl: 'https://github.com/kaklewski/projekty-wnetrz',
             },
             {
-                image: 'screenshots/stomatolog-piasecki.png',
+                image: 'screenshots/stomatolog-piasecki.webp',
                 name: t('projectsSection.projects.stomatologPiasecki.name'),
                 description: t(
                     'projectsSection.projects.stomatologPiasecki.description',
