@@ -210,7 +210,7 @@ const resources = {
                 },
 
                 buttons: {
-                    viewProject: 'Zobacz demo',
+                    viewProject: 'Demo',
                     viewCode: 'Kod źródłowy',
                 },
             },

@@ -5,7 +5,6 @@ import {
     Card,
     Flex,
     Heading,
-    HStack,
     Image,
     SimpleGrid,
 } from '@chakra-ui/react';
@@ -267,25 +266,27 @@ const ProjectCard = ({
                     <Card.Description flexGrow="2">
                         {description}
                     </Card.Description>
-                    <HStack mt="4">
+                    <Flex mt="4" wrap="wrap" gap="2">
                         {tools.map((tool) => (
                             <ToolBadge key={tool} name={tool} />
                         ))}
-                    </HStack>
+                    </Flex>
                 </Card.Body>
                 <Card.Footer>
-                    <LinkButton url={demoUrl} icon={<IconExternalLink />}>
-                        {t('projectsSection.buttons.viewProject')}
-                    </LinkButton>
-                    {codeUrl && (
-                        <LinkButton
-                            url={codeUrl}
-                            icon={<IconBrandGithub />}
-                            variant="surface"
-                        >
-                            {t('projectsSection.buttons.viewCode')}
+                    <Flex gap="2" wrap="wrap">
+                        <LinkButton url={demoUrl} icon={<IconExternalLink />}>
+                            {t('projectsSection.buttons.viewProject')}
                         </LinkButton>
-                    )}
+                        {codeUrl && (
+                            <LinkButton
+                                url={codeUrl}
+                                icon={<IconBrandGithub />}
+                                variant="surface"
+                            >
+                                {t('projectsSection.buttons.viewCode')}
+                            </LinkButton>
+                        )}
+                    </Flex>
                 </Card.Footer>
             </Flex>
         </Card.Root>
